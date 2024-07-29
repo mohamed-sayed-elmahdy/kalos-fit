@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { IoStar } from "react-icons/io5";
-import { motion } from "framer-motion";
-import FadeIn from "../../../../lib/variants";
 
 import {
   VerticalTimeline,
@@ -15,22 +13,16 @@ function HowWecan() {
     <div className="flex flex-col justify-center items-center my-7">
       <h1 className="h1 text-gradient my-12">How We Can Help You</h1>
       <VerticalTimeline>
-      <motion.div
-          variants={FadeIn("top", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.8 }}
-          className="w-full"
-        >
         <VerticalTimelineElement
           visible={true}
+          animate={true}
           className="vertical-timeline-element--work rounded-3xl"
           contentStyle={{
             background: "#30B43C",
             color: "#fff",
             borderRadius: "24px",
           }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          contentArrowStyle={{ borderRight: "10px solid  #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
@@ -46,13 +38,14 @@ function HowWecan() {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           visible={true}
+          animate={true}
           className="vertical-timeline-element--work rounded-3xl"
           contentStyle={{
             background: "#30B43C",
             color: "#fff",
             borderRadius: "24px",
           }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
@@ -67,24 +60,17 @@ function HowWecan() {
             choices.
           </p>
         </VerticalTimelineElement>
-        </motion.div>
-        <motion.div
-          variants={FadeIn("bottom", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.8 }}
-          className="w-full"
-        >
-        
+
         <VerticalTimelineElement
           visible={true}
+          animate={true}
           className="vertical-timeline-element--work rounded-3xl"
           contentStyle={{
             background: "#30B43C",
             color: "#fff",
             borderRadius: "24px",
           }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
@@ -103,13 +89,14 @@ function HowWecan() {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           visible={true}
+          animate={true}
           className="vertical-timeline-element--work rounded-3xl"
           contentStyle={{
             background: "#30B43C",
             color: "#fff",
             borderRadius: "24px",
           }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
@@ -123,7 +110,6 @@ function HowWecan() {
             make for meals and snacks.
           </p>
         </VerticalTimelineElement>
-        </motion.div>
       </VerticalTimeline>
     </div>
   );
