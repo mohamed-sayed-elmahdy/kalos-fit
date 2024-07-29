@@ -23,7 +23,9 @@
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
 }
-
+html {
+  background: black !important ; 
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -33,7 +35,7 @@ body {
     )
     rgb(var(--background-start-rgb));
   font-family: "League Spartan";
-  background: #000;
+  background: black !important ; 
 }
 
 @layer utilities {
