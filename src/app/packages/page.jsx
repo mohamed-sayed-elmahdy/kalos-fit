@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function page() {
   return (
-    <div>page</div>
-  )
+    <div className="flex justify-center items-center h-[100vh]">
+      <h1 className="h1 text-gradient">Packages</h1>
+    </div>
+  );
 }
 
-export default page
+export default page;
