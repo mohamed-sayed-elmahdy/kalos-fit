@@ -33,6 +33,7 @@ body {
     )
     rgb(var(--background-start-rgb));
   font-family: "League Spartan";
+  background: #000;
 }
 
 @layer utilities {

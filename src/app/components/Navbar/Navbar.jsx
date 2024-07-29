@@ -16,7 +16,7 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 z-10 bg-custom-bg shadow-custom-shadow backdrop-blur-custom-blur pt-1">
+      <nav className="w-full fixed top-0 left-0 right-0 z-10 bg-custom-bg shadow-custom-shadow backdrop-blur-custom-blur pt-1 bg-black">
         <div className="justify-between px-4 mx-auto md:items-center md:flex md:px-6 lg:px-9">
           <div>
             <div className="flex items-center justify-between py-3 md:py-4 md:pt-2 md:block">
