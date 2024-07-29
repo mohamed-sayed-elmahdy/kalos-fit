@@ -26,6 +26,7 @@ function HeroSection() {
           {/* btn and socials */}
           <div className="flex flex-col xl:flex-row items-center gap-8 ">
             <PackageButton
+            path="/packages"
               parentStyling="mt-2 md:mt-0 flex justify-center items-center duration-500"
               buttonStyling="py-2 px-8 bg-black border-2 border-[#30B43C] text-[#30B43C] rounded-3xl capitalize lg:text-base hover:bg-[#30B43C] hover:text-white font-medium transition-all"
               children="choose your Package"

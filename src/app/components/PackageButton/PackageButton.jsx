@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from "next/link";
 
-function PackageButton({parentStyling, buttonStyling, children, onClick}) {
+function PackageButton({parentStyling, buttonStyling, children, onClick,path}) {
   return (
-    <Link href="/packages" onClick={onClick}>
+    <Link href={path} onClick={onClick}>
     <div className={parentStyling}>
       <button className={buttonStyling}>
         {children}

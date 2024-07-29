@@ -8,8 +8,8 @@ export default function Home() {
  <div>
   <HeroSection/>
 <ProgramSection/>
-<WhatTheySay/>
 <HowWecan/>
+<WhatTheySay/>
  </div>
   );
 }

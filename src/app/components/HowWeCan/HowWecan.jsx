@@ -7,10 +7,12 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import PackageButton from "../PackageButton/PackageButton";
+import Link from "next/link";
 
 function HowWecan() {
   return (
-    <div className="flex flex-col justify-center items-center my-7">
+    <div className="flex flex-col justify-center items-center my-7 ">
       <h1 className="h1 text-gradient my-12">How We Can Help You</h1>
       <VerticalTimeline lineColor="#D4FF9E" animate={true}>
         <VerticalTimelineElement
@@ -111,6 +113,14 @@ function HowWecan() {
           </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
+      <div className=" w-full flex items-center justify-center ">
+        <PackageButton
+          path="/about"
+          children="Learn More"
+          parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 lg:flex mr-6"
+          buttonStyling="py-2 px-12 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"
+        />
+      </div>
     </div>
   );
 }

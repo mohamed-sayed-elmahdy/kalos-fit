@@ -97,6 +97,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <PackageButton
+                path="/packages"
                   onClick={() => setNavbar(!navbar)}
                   parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 md:hidden lg:flex"
                   buttonStyling="py-2 px-8 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"

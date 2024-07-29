@@ -43,7 +43,7 @@ function TestimonialCard({ name, text, thirdCardMargin }) {
 
 function WhatTheySay() {
   return (
-    <div className="text-white my-12">
+    <div className="text-white my-16">
       <div className="text-center py-10">
         <h2 className="text-gradient h2 mx-auto max-w-96 mb-12">
           Read what They Say About Us
