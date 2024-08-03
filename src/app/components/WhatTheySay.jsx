@@ -26,7 +26,9 @@ const testimonials = [
 function TestimonialCard({ name, text, thirdCardMargin }) {
   return (
     <div className=" text-green-500 flex flex-col items-center justify-start max-w-[320px] h-full bg-white/90 p-8 rounded-xl mix-blend-lighten pb-4 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.99] hover:!scale-105 transition-all duration-500">
-      <h3 className=" text-green-500 h3 capitalize text-xl font-bold">{name}</h3>
+      <h3 className=" text-green-500 h3 capitalize text-xl font-bold">
+        {name}
+      </h3>
       <p className=" text-green-500 text-sm leading-7 my-3 font-light ">
         {text}
       </p>
@@ -50,13 +52,13 @@ function WhatTheySay() {
         <h2 className="text-gradient h2 mx-auto max-w-96 mb-12">
           Read what They Say About Us
         </h2>
-        <motion.div
+        {/* <motion.div
           variants={FadeIn("right", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true, amount: 0.8 }}
           className="w-full"
-        >
+        > */}
           <div className="bg-black grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
@@ -66,7 +68,7 @@ function WhatTheySay() {
               />
             ))}
           </div>
-        </motion.div>
+        {/* </motion.div> */}
       </div>
     </div>
   );
