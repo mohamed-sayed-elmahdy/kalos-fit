@@ -25,9 +25,11 @@ const testimonials = [
 
 function TestimonialCard({ name, text, thirdCardMargin }) {
   return (
-    <div className="flex flex-col items-center justify-start max-w-[320px] h-full bg-white/10 p-8 rounded-xl mix-blend-lighten pb-4 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.99] hover:!scale-105 transition-all duration-500">
-      <h3 className="h3 capitalize text-xl font-bold">{name}</h3>
-      <p className="text-sm leading-7 my-3 font-light opacity-50">{text}</p>
+    <div className=" text-white flex flex-col items-center justify-start max-w-[320px] h-full bg-white/10 p-8 rounded-xl mix-blend-lighten pb-4 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.99] hover:!scale-105 transition-all duration-500">
+      <h3 className=" text-white h3 capitalize text-xl font-bold">{name}</h3>
+      <p className=" text-white text-sm leading-7 my-3 font-light opacity-50">
+        {text}
+      </p>
       <div
         className={`flex gap-[2px] justify-center items-center ${thirdCardMargin} `}
       >
