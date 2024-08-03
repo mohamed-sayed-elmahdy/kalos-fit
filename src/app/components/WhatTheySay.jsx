@@ -57,7 +57,7 @@ function WhatTheySay() {
           viewport={{ once: true, amount: 0.8 }}
           className="w-full"
         >
-          <div className="grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
+          <div className="bg-black grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={index}
