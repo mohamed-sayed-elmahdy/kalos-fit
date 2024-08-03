@@ -73,13 +73,13 @@ body {
       290.02deg,
       #D4FF9E -27.56%,
       #30b43c 43.56%
-    );
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    ) !important; 
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-fill-color: transparent !important;
   }
 
 

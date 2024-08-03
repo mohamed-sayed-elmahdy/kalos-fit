@@ -13,7 +13,9 @@ import Link from "next/link";
 function HowWecan() {
   return (
     <div className="flex flex-col justify-center items-center my-7 ">
-      <h1 className="h1 text-gradient my-12">How We Can Help You</h1>
+      <h1 className="h1 text-gradient my-12 text-center">
+        How We Can Help You
+      </h1>
       <VerticalTimeline lineColor="#D4FF9E" animate={true}>
         <VerticalTimelineElement
           visible={true}
