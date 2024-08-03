@@ -24,6 +24,12 @@
     --background-end-rgb: 0, 0, 0;
   }
 } */
+:root {
+  --primary-color: #30B43C;
+  --secondary-color: #D4FF9E;
+  --background-color: black;
+  --text-color: white;
+}
 
 
 * {
@@ -34,7 +40,7 @@
 
 }
 html {
-  background: black !important ; 
+  background-color: var(--background-color) !important;
 }
 body {
   /* color: rgb(var(--foreground-rgb));
@@ -45,8 +51,8 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   font-family: "League Spartan";
-  background: black !important ; 
-  color: white;
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
 }
 
 @layer utilities {

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookSquare,FaInstagram,FaLinkedin   } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -37,7 +37,10 @@ export default function Footer() {
           >
             <FaLinkedin className={styles.linkedin} />
           </Link>
-          <Link href="https://www.facebook.com/profile.php?id=61563036785699" target="_blank">
+          <Link
+            href="https://www.facebook.com/profile.php?id=61563036785699"
+            target="_blank"
+          >
             <FaFacebookSquare className={styles.youtube} />
           </Link>
         </div>
@@ -48,38 +51,29 @@ export default function Footer() {
           <Link href="/" className={styles.linkmenu}>
             Home
           </Link>
-          <Link href="/contactUs" className={styles.linkmenu}>
-            Contact Us
-          </Link>
           <Link href="/aboutUs" className={styles.linkmenu}>
             About Us
           </Link>
-          <Link href="/events" className={styles.linkmenu}>
-            Events
+          <Link href="/blog" className={styles.linkmenu}>
+            Blog
+          </Link>
+          <Link href="/packages" className={styles.linkmenu}>
+            Packages
+          </Link>
+          <Link href="/contact" className={styles.linkmenu}>
+            Contact
           </Link>
         </div>
-  
+
         <div className={`${styles.linksColumnContainer} `}>
           <h2>Legal</h2>
-          <a
-            href="https://login.shlenpower.com/documents/General_Terms_and_Conditions.pdf"
-            target="_blank"
-            className={styles.linkmenu}
-          >
+          <a href="/" className={styles.linkmenu}>
             Terms & Conditions
           </a>
-          <a
-            href="https://login.shlenpower.com/documents/Terms_Of_Use.pdf"
-            target="_blank"
-            className={styles.linkmenu}
-          >
+          <a href="/" className={styles.linkmenu}>
             Terms of use
           </a>
-          <a
-            href="https://login.shlenpower.com/documents/Privacy_Policy.pdf"
-            target="_blank"
-            className={styles.linkmenu}
-          >
+          <a href="/" className={styles.linkmenu}>
             Privacy Policy
           </a>
         </div>
@@ -87,5 +81,3 @@ export default function Footer() {
     </div>
   );
 }
-
-

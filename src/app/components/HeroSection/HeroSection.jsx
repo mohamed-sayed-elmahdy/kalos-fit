@@ -6,7 +6,7 @@ import Social from "../Social";
 
 function HeroSection() {
   return (
-    <div className="mt-36 container mx-auto h-full text-white lg:px-9">
+    <div className="pt-36 container mx-auto h-full text-white lg:px-9">
       <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 ">
         {/* text */}
         <div className="text-center xl:text-left order-2 xl:order-none">
