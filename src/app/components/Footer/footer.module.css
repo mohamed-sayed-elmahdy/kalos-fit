@@ -2,10 +2,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin: 1rem 1.5%;
   text-align: center;
   gap: 3rem;
-  padding: 3.5rem 1rem 0.1rem;
+  padding: 3.5rem 1rem 1rem;
+  color: white;
 }
 
 .leftFooterContainer {
@@ -47,13 +47,13 @@
   display: flex;
   gap: 1.2rem;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 500;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
 }
 .linksColumnContainer .linkmenu:hover {
-  color: #00bfff;
+  color: #30b43c;
   cursor: pointer;
 }
 
