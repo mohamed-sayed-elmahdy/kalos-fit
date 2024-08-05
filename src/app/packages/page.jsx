@@ -1,9 +1,10 @@
 import React from "react";
+import Packages from "../components/packages/Packages";
 
 function page() {
   return (
-    <div className="flex justify-center items-center h-[100vh]">
-      <h1 className="h1 text-gradient">Packages</h1>
+    <div className="w-full flex justify-center items-center">
+      <Packages />
     </div>
   );
 }
