@@ -1,5 +1,6 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
+import { useRouter } from 'next/navigation'; // Updated import
 
 const packages = [
   {
@@ -38,7 +39,7 @@ const packages = [
     textColor: "#30B43C",
   },
   {
-    name: "Get Ready",
+    name: "Get Ready Plus",
     period: "3 Months",
     price: 1500,
     summary:
@@ -58,45 +59,54 @@ const packages = [
   },
 ];
 
-const PackageCard = ({ pkg }) => (
-  <div
-    className="text-xl  rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between"
-    style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
-  >
-    <div>
-      <div style={{ color: pkg.textColor }}>{pkg.name}</div>
-      <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
-      <div className="text-xl font-extrabold">{pkg.period}</div>
-      <div className="text-lg">{pkg.summary}</div>
-      <ul className="my-6">
-        {pkg.features.map((feature, index) => (
-          <li
-            key={index}
-            className="flex items-start text-base gap-3 text-white font-semibold leading-6 px-2"
-          >
-            <span className="pt-1">
-              <FaCheckCircle
-                className="text-base"
-                style={{ color: pkg.borderColor }}
-              />
-            </span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </div>
-    <button
-      className= "self-center w-60 text-black py-2 rounded-full text-xl  transition-all mt-auto"
-      style={{ backgroundColor: pkg.buttonBgColor }}
-      onMouseOver={(e) =>
-        (e.target.style.backgroundColor = pkg.buttonHoverColor)
-      }
-      onMouseOut={(e) => (e.target.style.backgroundColor = pkg.buttonBgColor)}
+const PackageCard = ({ pkg }) => {
+  const router = useRouter(); // Using the correct useRouter hook
+
+  const handleButtonClick = () => {
+    router.push(`/packages/${encodeURIComponent(pkg.name)}`);
+};
+
+  return (
+    <div
+      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between"
+      style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
-      Start Your Journey
-    </button>
-  </div>
-);
+      <div>
+        <div style={{ color: pkg.textColor }}>{pkg.name}</div>
+        <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
+        <div className="text-xl font-extrabold">{pkg.period}</div>
+        <div className="text-lg">{pkg.summary}</div>
+        <ul className="my-6">
+          {pkg.features.map((feature, index) => (
+            <li
+              key={index}
+              className="flex items-start text-base gap-3 text-white font-semibold leading-6 px-2"
+            >
+              <span className="pt-1">
+                <FaCheckCircle
+                  className="text-base"
+                  style={{ color: pkg.borderColor }}
+                />
+              </span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button
+        className="self-center w-60 text-black py-2 rounded-full text-xl transition-all mt-auto"
+        style={{ backgroundColor: pkg.buttonBgColor }}
+        onMouseOver={(e) =>
+          (e.target.style.backgroundColor = pkg.buttonHoverColor)
+        }
+        onMouseOut={(e) => (e.target.style.backgroundColor = pkg.buttonBgColor)}
+        onClick={handleButtonClick}
+      >
+        Start Your Journey
+      </button>
+    </div>
+  );
+};
 
 const Packages = () => (
   <div className="mt-48 mb-28">
