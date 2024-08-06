@@ -30,7 +30,7 @@ function HowWecan() {
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
-          <h3 className="vertical-timeline-element-title h3 ">
+          <h3 className="vertical-timeline-element-title h3 text-black">
             Improve health:
           </h3>
           <p>
@@ -53,7 +53,7 @@ function HowWecan() {
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
-          <h3 className="vertical-timeline-element-title h3 capitalize">
+          <h3 className="vertical-timeline-element-title h3 capitalize text-black">
             Weight management:
           </h3>
           <p>
@@ -78,7 +78,7 @@ function HowWecan() {
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
-          <h3 className="vertical-timeline-element-title h3 capitalize">
+          <h3 className="vertical-timeline-element-title h3 capitalize text-black">
             Increase energy levels
           </h3>
           <p>
@@ -104,7 +104,7 @@ function HowWecan() {
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
-          <h3 className="vertical-timeline-element-title h3 capitalize">
+          <h3 className="vertical-timeline-element-title h3 capitalize text-black">
             Time-saving and convenience
           </h3>
           <p>
