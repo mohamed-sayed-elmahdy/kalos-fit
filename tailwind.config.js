@@ -17,6 +17,7 @@ module.exports = {
       },
       backdropBlur: {
         'custom-blur': '16px',
+        'lowCustom-blur': '28px'
       },
       screens: {
         '895px': '895px',

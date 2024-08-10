@@ -1,6 +1,6 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
-import { useRouter } from 'next/navigation'; // Updated import
+import { useRouter } from "next/navigation"; // Updated import
 
 const packages = [
   {
@@ -39,11 +39,11 @@ const packages = [
     textColor: "#30B43C",
   },
   {
-    name: "Get Ready Plus",
-    period: "3 Months",
+    name: "Lifestyle",
+    period: "6 Months",
     price: 1500,
     summary:
-      "Get ready for any important event in your life and shine with a beautiful, fit body",
+      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
       "A nutrition plan tailored to your needs and desires",
       "A Workout plan from home or at home tailored to your level",
@@ -64,7 +64,7 @@ const PackageCard = ({ pkg }) => {
 
   const handleButtonClick = () => {
     router.push(`/packages/${encodeURIComponent(pkg.name)}`);
-};
+  };
 
   return (
     <div
@@ -75,7 +75,7 @@ const PackageCard = ({ pkg }) => {
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
-        <div className="text-lg">{pkg.summary}</div>
+        <div className="text-base">{pkg.summary}</div>
         <ul className="my-6">
           {pkg.features.map((feature, index) => (
             <li
