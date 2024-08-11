@@ -224,11 +224,11 @@ export default function CustomForm() {
               value={formData.name}
               onChange={handleChange}
               className={`mt-[2px] block w-full py-1 pl-2 border-2 outline-none border-transparent rounded-2xl shadow-sm focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30 ${
-                errors.name ? "border-red-500" : ""
+                errors.name ? "border-red-500 bg-white" : ""
               }`}
             />
             {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.name}</p>
             )}
           </div>
 
@@ -245,7 +245,7 @@ export default function CustomForm() {
                 errors.age ? "border-red-500" : ""
               }`}
             />
-            {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
+            {errors.age && <p className="text-red-500 text-sm font-semibold">{errors.age}</p>}
           </div>
 
           <div>
@@ -262,7 +262,7 @@ export default function CustomForm() {
               }`}
             />
             {errors.whatsapp && (
-              <p className="text-red-500 text-sm">{errors.whatsapp}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.whatsapp}</p>
             )}
           </div>
 
@@ -280,7 +280,7 @@ export default function CustomForm() {
               }`}
             />
             {errors.occupation && (
-              <p className="text-red-500 text-sm">{errors.occupation}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.occupation}</p>
             )}
           </div>
 
@@ -298,7 +298,7 @@ export default function CustomForm() {
               }`}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.email}</p>
             )}
           </div>
 
@@ -316,7 +316,7 @@ export default function CustomForm() {
               }`}
             />
             {errors.height && (
-              <p className="text-red-500 text-sm">{errors.height}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.height}</p>
             )}
           </div>
 
@@ -334,7 +334,7 @@ export default function CustomForm() {
               }`}
             />
             {errors.weight && (
-              <p className="text-red-500 text-sm">{errors.weight}</p>
+              <p className="text-red-500 text-sm font-semibold">{errors.weight}</p>
             )}
           </div>
 
