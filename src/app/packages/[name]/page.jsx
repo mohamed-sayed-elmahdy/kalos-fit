@@ -105,8 +105,46 @@ export default function CustomForm() {
     setErrors(newErrors);
     return valid;
   };
-  function Submit(e) {
+
+  const fillTestData = () => {
+    setFormData({
+      name: "John Doe",
+      age: "30",
+      whatsapp: "1234567890",
+      occupation: "Software Engineer",
+      email: "john.doe@example.com",
+      height: "180",
+      weight: "75",
+      currentDisease: "None",
+      medications: "None",
+      disciplined: "Yes",
+      agreeInstructions: "Yes",
+      gymTrainingDuration: "2 years",
+      exerciseExperience: "8",
+      gymDaysPerWeek: "5",
+      activities: "Running, Swimming",
+      followUpGoal: "Lose 5kg",
+      foodAllergy: "None",
+      smoke: "No",
+      drink: "No",
+      cookHealthy: "Yes",
+      followRecipes: "Yes",
+      similarMeals: "Yes",
+      waterIntake: "3",
+      nutritionExperience: "1",
+      mainProblem: "Time management",
+      mealsLike: "Chicken, Rice",
+      mealsDislike: "Fish",
+      understandDietImportance: "Yes",
+    });
+  };
+
+  const Submit = (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+    
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
@@ -124,6 +162,7 @@ export default function CustomForm() {
       .catch((error) => {
         console.log(error);
       });
+
     setFormData({
       name: "",
       age: "",
@@ -153,38 +192,6 @@ export default function CustomForm() {
       mealsLike: "",
       mealsDislike: "",
       understandDietImportance: "",
-    });
-  }
-  const fillTestData = () => {
-    setFormData({
-      name: "John Doe",
-      age: "30",
-      whatsapp: "1234567890",
-      occupation: "Software Engineer",
-      email: "john.doe@example.com",
-      height: "180",
-      weight: "75",
-      currentDisease: "None",
-      medications: "None",
-      disciplined: "Yes",
-      agreeInstructions: "Yes",
-      gymTrainingDuration: "2 years",
-      exerciseExperience: "8",
-      gymDaysPerWeek: "5",
-      activities: "Running, Swimming",
-      followUpGoal: "Lose 5kg",
-      foodAllergy: "None",
-      smoke: "no",
-      drink: "no",
-      cookHealthy: "yes",
-      followRecipes: "yes",
-      similarMeals: "yes",
-      waterIntake: "3",
-      nutritionExperience: "1",
-      mainProblem: "Time management",
-      mealsLike: "Chicken, Rice",
-      mealsDislike: "Fish",
-      understandDietImportance: "yes",
     });
   };
 
@@ -719,7 +726,13 @@ export default function CustomForm() {
 
 
 
-
+          <button
+              type="button"
+              onClick={fillTestData}
+              className="px-4 py-2 bg-gray-600 text-white rounded-lg"
+            >
+              Fill Test Data
+            </button>
 
 
       
