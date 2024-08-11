@@ -110,7 +110,7 @@ export default function CustomForm() {
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
-      "https://script.google.com/macros/s/AKfycbztSAF0O3aFSSWxpCg2upLfjPQ12c1-epbdHuW7_p1FqgPmisWj2x2TtFzagRyPcd_gcA/exec",
+      "https://script.google.com/macros/s/AKfycbxdgtmI01Dule-3mD1_lugdg6-U6ZCz01WF-9dwUy7ugFgaY33cUlLzMzAOZGp9zGV40Q/exec",
       {
         method: "POST",
         body: formDatab,
