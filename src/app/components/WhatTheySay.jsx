@@ -50,13 +50,7 @@ function WhatTheySay() {
         <h2 className="!text-gradient h2 mx-auto max-w-96 mb-12">
           Read what They Say About Us
         </h2>
-        {/* <motion.div
-          variants={FadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.8 }}
-          className="w-full"
-        > */}
+
           <div className="bg-black grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
@@ -66,7 +60,7 @@ function WhatTheySay() {
               />
             ))}
           </div>
-        {/* </motion.div> */}
+      
       </div>
     </div>
   );

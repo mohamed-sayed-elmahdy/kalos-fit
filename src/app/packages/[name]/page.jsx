@@ -1,9 +1,70 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname,useRouter } from "next/navigation";
+
+const packages = [
+  {
+    name: "Your New Life Gate",
+    period: "1 Month",
+    price: 250,
+    summary: "Your Gate for Your Confident, Healthy, Successful Life",
+    features: [
+      "A nutrition plan tailored to your needs and desires",
+      "A Workout plan from home or at home tailored to your level",
+      "A suggested system for supplements if you want to use them",
+      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
+      "Medical consultation",
+    ],
+    bgColor: "#112308",
+    borderColor: "#30B43C",
+    buttonBgColor: "#30B43C",
+    buttonHoverColor: "#7CFF88",
+    textColor: "#30B43C",
+  },
+  {
+    name: "Get Ready",
+    period: "3 Months",
+    price: 750,
+    summary:
+      "Get ready for any important event in your life and shine with a beautiful, fit body",
+    features: [
+      "A nutrition plan tailored to your needs and desires",
+      "A Workout plan from home or at home tailored to your level",
+      "A suggested system for supplements if you want to use them",
+      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
+      "Medical consultation",
+    ],
+    bgColor: "#112308",
+    borderColor: "#30B43C",
+    buttonBgColor: "#30B43C",
+    buttonHoverColor: "#7CFF88",
+    textColor: "#30B43C",
+  },
+  {
+    name: "Lifestyle",
+    period: "6 Months",
+    price: 1500,
+    summary:
+      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
+    features: [
+      "A nutrition plan tailored to your needs and desires",
+      "A Workout plan from home or at home tailored to your level",
+      "A suggested system for supplements if you want to use them",
+      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
+      "Weekly follow-up via Zoom With your nutrition & training Coach",
+      "Medical consultation",
+    ],
+    bgColor: "#112308",
+    borderColor: "#30B43C",
+    buttonBgColor: "#30B43C",
+    buttonHoverColor: "#7CFF88",
+    textColor: "#30B43C",
+  },
+];
 
 export default function CustomForm() {
   const pathname = usePathname();
+  const router = useRouter(); // Using the correct useRouter hook
   const [packageName, setPackageName] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -43,6 +104,7 @@ export default function CustomForm() {
     const name = segments[segments.length - 1];
     setPackageName(decodeURIComponent(name));
   }, [pathname]);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -144,7 +206,7 @@ export default function CustomForm() {
     if (!validateForm()) {
       return;
     }
-    
+
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
@@ -158,6 +220,8 @@ export default function CustomForm() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+
+        
       })
       .catch((error) => {
         console.log(error);
@@ -193,6 +257,10 @@ export default function CustomForm() {
       mealsDislike: "",
       understandDietImportance: "",
     });
+    router.push(`/paypalCheckout/${encodeURIComponent(packageName)}`);
+
+
+  
   };
 
   return (
@@ -228,7 +296,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.name && (
-              <p className="text-red-500 text-sm font-semibold">{errors.name}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.name}
+              </p>
             )}
           </div>
 
@@ -245,7 +315,9 @@ export default function CustomForm() {
                 errors.age ? "border-red-500" : ""
               }`}
             />
-            {errors.age && <p className="text-red-500 text-sm font-semibold">{errors.age}</p>}
+            {errors.age && (
+              <p className="text-red-500 text-sm font-semibold">{errors.age}</p>
+            )}
           </div>
 
           <div>
@@ -262,7 +334,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.whatsapp && (
-              <p className="text-red-500 text-sm font-semibold">{errors.whatsapp}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.whatsapp}
+              </p>
             )}
           </div>
 
@@ -280,7 +354,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.occupation && (
-              <p className="text-red-500 text-sm font-semibold">{errors.occupation}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.occupation}
+              </p>
             )}
           </div>
 
@@ -298,7 +374,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm font-semibold">{errors.email}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.email}
+              </p>
             )}
           </div>
 
@@ -316,7 +394,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.height && (
-              <p className="text-red-500 text-sm font-semibold">{errors.height}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.height}
+              </p>
             )}
           </div>
 
@@ -334,7 +414,9 @@ export default function CustomForm() {
               }`}
             />
             {errors.weight && (
-              <p className="text-red-500 text-sm font-semibold">{errors.weight}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.weight}
+              </p>
             )}
           </div>
 
@@ -498,7 +580,6 @@ export default function CustomForm() {
           </div>
 
           {/* Radio Inputs */}
-       
 
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
@@ -545,7 +626,7 @@ export default function CustomForm() {
               ))}
             </div>
           </div>
-          
+
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
               Would you like to follow healthy recipes?
@@ -571,7 +652,7 @@ export default function CustomForm() {
               ))}
             </div>
           </div>
-       
+
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
               Your experience in nutrition (1 to 10)
@@ -665,8 +746,7 @@ export default function CustomForm() {
               ))}
             </div>
           </div>
-      
-          
+
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
               Do you know that sticking to your diet is a main factor for your
@@ -719,23 +799,13 @@ export default function CustomForm() {
             </div>
           </div>
 
-
-         
-
-
-
-
-
           <button
-              type="button"
-              onClick={fillTestData}
-              className="px-4 py-2 bg-gray-600 text-white rounded-lg"
-            >
-              Fill Test Data
-            </button>
-
-
-      
+            type="button"
+            onClick={fillTestData}
+            className="px-4 py-2 bg-gray-600 text-white rounded-lg"
+          >
+            Fill Test Data
+          </button>
 
           <button
             type="submit"
