@@ -1,7 +1,9 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import {PayPalScriptProvider,PayPalButtons} from "@paypal/react-paypal-js";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { FaCheckCircle } from "react-icons/fa"; // Assuming you are using react-icons for the check icon
+
 const packages = [
   {
     name: "Your New Life Gate",
@@ -62,7 +64,6 @@ const packages = [
   },
 ];
 
-
 export default function CheckoutPage({ params }) {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const { name } = params;
@@ -86,14 +87,55 @@ export default function CheckoutPage({ params }) {
   };
 
   return (
-    
-      <div className="mt-28 h-[100vh] ">
-        <h1 className="text-4xl">You chose the {selectedPackage.name} package</h1>
-        <p>Price: ${selectedPackage.price}</p>
-   <PayPalScriptProvider>
-    <PayPalButtons/>
-   </PayPalScriptProvider>
+    <div className="mt-14 h-[100vh] flex items-center justify-around gap-2 md:px-16">
+      <div>
+        <h1 className="text-4xl mb-4">
+          You chose the {selectedPackage.name} package
+        </h1>
+
+        <PackageCard pkg={selectedPackage} />
       </div>
 
+      <div className="flex items-center justify-center bg-black w-96">
+        <PayPalScriptProvider >
+          <PayPalButtons className="w-96"/>
+        </PayPalScriptProvider>
+      </div>
+    </div>
   );
 }
+
+
+
+
+const PackageCard = ({ pkg }) => {
+  return (
+    <div
+      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between"
+      style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
+    >
+      <div>
+        <div style={{ color: pkg.textColor }}>{pkg.name}</div>
+        <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
+        <div className="text-xl font-extrabold">{pkg.period}</div>
+        <div className="text-base">{pkg.summary}</div>
+        <ul className="my-6">
+          {pkg.features.map((feature, index) => (
+            <li
+              key={index}
+              className="flex items-start text-base gap-3 text-white font-semibold leading-6 px-2"
+            >
+              <span className="pt-1">
+                <FaCheckCircle
+                  className="text-base"
+                  style={{ color: pkg.borderColor }}
+                />
+              </span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
