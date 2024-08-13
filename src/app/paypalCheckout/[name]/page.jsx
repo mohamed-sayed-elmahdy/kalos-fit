@@ -1,8 +1,7 @@
-"use client";
-
-import { useState, React, useEffect } from "react";
+"use client"
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-
+import {PayPalScriptProvider,PayPalButtons} from "@paypal/react-paypal-js";
 const packages = [
   {
     name: "Your New Life Gate",
@@ -46,7 +45,7 @@ const packages = [
     period: "6 Months",
     price: 1500,
     summary:
-      "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
+      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
       "A nutrition plan tailored to your needs and desires",
       "A Workout plan from home or at home tailored to your level",
@@ -63,13 +62,13 @@ const packages = [
   },
 ];
 
+
 export default function CheckoutPage({ params }) {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const { name } = params;
 
   useEffect(() => {
     const decodedName = decodeURIComponent(name);
-    console.log(decodedName)
     const foundPackage = packages.find((pkg) => pkg.name === decodedName);
 
     if (foundPackage) {
@@ -78,14 +77,23 @@ export default function CheckoutPage({ params }) {
   }, [name]);
 
   if (!selectedPackage) {
-    return <div className="mt-72">Package not found</div>;
+    return <div className="mt-20">Package is Loading</div>;
   }
+  const paypalOptions = {
+    "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+    components: "buttons",
+    currency: "USD",
+  };
 
   return (
-    <div className="mt-48 h-[100vh] ">
-      <h1 className="text-4xl">You chose the {selectedPackage.name} package</h1>
-      <p>Price: ${selectedPackage.price}</p>
-      {/* Integrate PayPal Button Component */}
-    </div>
+    
+      <div className="mt-28 h-[100vh] ">
+        <h1 className="text-4xl">You chose the {selectedPackage.name} package</h1>
+        <p>Price: ${selectedPackage.price}</p>
+   <PayPalScriptProvider>
+    <PayPalButtons/>
+   </PayPalScriptProvider>
+      </div>
+
   );
 }
