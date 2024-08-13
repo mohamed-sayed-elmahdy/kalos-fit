@@ -87,10 +87,10 @@ export default function CheckoutPage({ params }) {
   };
 
   return (
-    <div className="mt-14 h-[100vh] flex items-center justify-around gap-2 md:px-16">
+    <div className="mt-14 h-[100vh] flex items-center justify-center gap-12 md:px-16">
       <div>
         <h1 className="text-4xl mb-4">
-          You chose the {selectedPackage.name} package
+          You chose the <span className="textgreen "> {selectedPackage.name} </span>package
         </h1>
 
         <PackageCard pkg={selectedPackage} />
