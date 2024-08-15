@@ -37,8 +37,8 @@ export default function PayPalCheckout({ selectedPackage }) {
     return actions.order.capture().then((details) => {
       setSuccess(true);
       router.push(`/thankYou`);
-    //   console.log("Payment successful!", details);
-      // Here you can handle the successful payment, such as showing a confirmation message or redirecting the user.
+      console.log("Payment successful!", details);
+    
     });
   };
 
