@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { FaCheckCircle } from "react-icons/fa"; // Assuming you are using react-icons for the check icon
+// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { FaCheckCircle } from "react-icons/fa"; 
+import PayPalCheckout from "../../components/PayPalButton";
 
 const packages = [
   {
@@ -87,19 +88,20 @@ export default function CheckoutPage({ params }) {
   };
 
   return (
-    <div className="mt-14 h-[100vh] flex items-center justify-center gap-12 md:px-16">
+    <div className="mt-28  flex items-center justify-center gap-4  lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
       <div>
-        <h1 className="text-4xl mb-4">
+        <h1 className="text-4xl mb-4 max-w-96">
           You chose the <span className="textgreen "> {selectedPackage.name} </span>package
         </h1>
 
         <PackageCard pkg={selectedPackage} />
       </div>
 
-      <div className="flex items-center justify-center bg-black w-96">
-        <PayPalScriptProvider >
+      <div className="flex items-center justify-center bg-black max-sm:w-full max-w-96 max-md:my-7">
+      <PayPalCheckout selectedPackage={selectedPackage}  />
+        {/* <PayPalScriptProvider >
           <PayPalButtons className="w-96"/>
-        </PayPalScriptProvider>
+        </PayPalScriptProvider> */}
       </div>
     </div>
   );
