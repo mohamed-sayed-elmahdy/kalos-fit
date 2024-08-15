@@ -88,7 +88,7 @@ export default function CheckoutPage({ params }) {
   };
 
   return (
-    <div className="mt-28  flex items-center justify-center gap-4  lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
+    <div className="w-full mt-28  flex items-center justify-center gap-4  lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
       <div>
         <h1 className="text-4xl mb-4 max-w-96">
           You chose the <span className="textgreen "> {selectedPackage.name} </span>package

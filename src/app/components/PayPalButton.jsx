@@ -49,7 +49,7 @@ export default function PayPalCheckout({ selectedPackage }) {
 
   return (
     <PayPalScriptProvider options={paypalOptions}>
-      <div className="paypal-button-container lg:min-w-96 max-sm:w-full border border-white p-3 rounded-3xl">
+      <div className="paypal-button-container   ">
         <PayPalButtons
           style={{ layout: "vertical" }}
           createOrder={createOrder}
