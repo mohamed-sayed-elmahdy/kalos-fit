@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { FaCheckCircle } from "react-icons/fa"; 
 import PayPalCheckout from "../../components/PayPalButton";
 
@@ -37,18 +36,19 @@ const packages = [
       "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
       "Medical consultation",
     ],
-    bgColor: "#112308",
-    borderColor: "#30B43C",
+    bgColor: "#c5ff7c30",
+    borderColor: "#D4FF9E",
     buttonBgColor: "#30B43C",
     buttonHoverColor: "#7CFF88",
     textColor: "#30B43C",
+    isHighlighted: true, // Added flag for special styling
   },
   {
     name: "Lifestyle",
     period: "6 Months",
     price: 1194,
     summary:
-      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
+      "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
       "A nutrition plan tailored to your needs and desires",
       "A Workout plan from home or at home tailored to your level",
@@ -81,39 +81,34 @@ export default function CheckoutPage({ params }) {
   if (!selectedPackage) {
     return <div className="mt-20">Package is Loading</div>;
   }
-  const paypalOptions = {
-    "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
-    components: "buttons",
-    currency: "USD",
-  };
 
   return (
-    <div className="w-full mt-28  flex items-center justify-center gap-4  lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
+    <div className="w-full mt-28 flex items-center justify-center gap-4 lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
       <div>
         <h1 className="text-4xl mb-4 max-w-96">
-          You chose the <span className="textgreen "> {selectedPackage.name} </span>package
+          You chose the <span className="textgreen">{selectedPackage.name}</span> package
         </h1>
 
         <PackageCard pkg={selectedPackage} />
       </div>
 
       <div className="flex items-center justify-center bg-black max-sm:w-full max-w-96 max-md:my-7">
-      <PayPalCheckout selectedPackage={selectedPackage}  />
-        {/* <PayPalScriptProvider >
-          <PayPalButtons className="w-96"/>
-        </PayPalScriptProvider> */}
+        <PayPalCheckout selectedPackage={selectedPackage} />
       </div>
     </div>
   );
 }
 
-
-
-
 const PackageCard = ({ pkg }) => {
+  const [showFeatures, setShowFeatures] = useState(false);
+
+  const handleToggle = () => {
+    setShowFeatures(prevState => !prevState);
+  };
+
   return (
     <div
-      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between"
+      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between transition-all duration-500"
       style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
       <div>
@@ -121,22 +116,30 @@ const PackageCard = ({ pkg }) => {
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
-        <ul className="my-6">
-          {pkg.features.map((feature, index) => (
-            <li
-              key={index}
-              className="flex items-start text-base gap-3 text-white font-semibold leading-6 px-2"
-            >
-              <span className="pt-1">
-                <FaCheckCircle
-                  className="text-base"
-                  style={{ color: pkg.borderColor }}
-                />
-              </span>
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <div className={`transition-all duration-500 overflow-hidden ${showFeatures ? 'max-h-screen' : 'max-h-0'}`}>
+          <ul className="my-6 transition-all duration-500">
+            {pkg.features.map((feature, index) => (
+              <li
+                key={index}
+                className="flex items-start text-base gap-3 text-white font-semibold leading-6 px-2"
+              >
+                <span className="pt-1">
+                  <FaCheckCircle
+                    className="text-base"
+                    style={{ color: pkg.borderColor }}
+                  />
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button
+          className="self-center w-60 text-white hover:text-black font-bold py-2 rounded-full text-xl transition-all duration-500 hover:bg-[#D4FF9E] bg-[#30B43C] mt-3"
+          onClick={handleToggle}
+        >
+          {showFeatures ? 'See Less' : 'See More'}
+        </button>
       </div>
     </div>
   );
