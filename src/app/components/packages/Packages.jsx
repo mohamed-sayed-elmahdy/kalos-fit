@@ -34,18 +34,19 @@ const packages = [
       "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
       "Medical consultation",
     ],
-    bgColor: "#112308",
-    borderColor: "#30B43C",
+    bgColor: "#c5ff7c30",
+    borderColor: "#D4FF9E",
     buttonBgColor: "#30B43C",
     buttonHoverColor: "#7CFF88",
     textColor: "#30B43C",
+    isHighlighted: true, // Added flag for special styling
   },
   {
     name: "Lifestyle",
     period: "6 Months",
     price: 1194,
     summary:
-      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
+      "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
       "A nutrition plan tailored to your needs and desires",
       "A Workout plan from home or at home tailored to your level",
@@ -63,7 +64,7 @@ const packages = [
 ];
 
 const PackageCard = ({ pkg }) => {
-  const router = useRouter(); // Using the correct useRouter hook
+  const router = useRouter();
 
   const handleButtonClick = () => {
     router.push(`/packages/${encodeURIComponent(pkg.name)}`);
@@ -71,9 +72,19 @@ const PackageCard = ({ pkg }) => {
 
   return (
     <div
-      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between"
+      className={`relative text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between overflow-hidden ${
+        pkg.isHighlighted ? "lg:transform xl:scale-110 z-10" : ""
+      }`} // Highlights the second package
       style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
+      {pkg.isHighlighted && (
+        <div
+          className="absolute top-4 -right-8 bg-red-500 text-white text-base px-12 py-2 rounded-lg font-semibold"
+          style={{ transform: "rotate(40deg)", fontStyle: "italic" }} // Rotates the badge and adds italic style
+        >
+          Best Offer
+        </div>
+      )}
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
@@ -114,7 +125,7 @@ const PackageCard = ({ pkg }) => {
 const Packages = () => (
   <div className="mt-48 mb-28">
     <h1 className="textgreen text-center text-6xl font-bold">Our Packages</h1>
-    <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-sm:space-y-4 max-sm:flex-col mt-14">
+    <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-sm:space-y-4 max-sm:flex-col mt-14">
       {packages.map((pkg, index) => (
         <PackageCard key={index} pkg={pkg} />
       ))}
