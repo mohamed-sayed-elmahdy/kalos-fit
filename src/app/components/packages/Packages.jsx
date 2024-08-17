@@ -125,7 +125,7 @@ const PackageCard = ({ pkg }) => {
 const Packages = () => (
   <div className="mt-48 mb-28">
     <h1 className="textgreen text-center text-6xl font-bold">Our Packages</h1>
-    <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-sm:space-y-4 max-sm:flex-col mt-14">
+    <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-6 max-sm:space-y-4 max-sm:flex-col mt-14">
       {packages.map((pkg, index) => (
         <PackageCard key={index} pkg={pkg} />
       ))}
