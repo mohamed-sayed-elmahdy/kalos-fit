@@ -80,7 +80,7 @@ const PackageCard = ({ pkg }) => {
       {pkg.isHighlighted && (
         <div
           className="absolute top-4 -right-8 bg-red-500 text-white text-base px-12 py-2 rounded-lg font-semibold"
-          style={{ transform: "rotate(40deg)", fontStyle: "italic" }} // Rotates the badge and adds italic style
+          style={{ transform: "rotate(40deg)", fontStyle: "italic" }} 
         >
           Best Offer
         </div>
