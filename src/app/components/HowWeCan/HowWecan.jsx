@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import { IoStar } from "react-icons/io5";
-
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import PackageButton from "../PackageButton/PackageButton";
-import Link from "next/link";
+
 
 function HowWecan() {
   return (
