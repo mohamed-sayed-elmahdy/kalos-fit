@@ -1,6 +1,6 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
-import { useRouter } from "next/navigation"; // Updated import
+import { useRouter } from "next/navigation"; 
 
 const packages = [
   {
