@@ -78,7 +78,7 @@ function HowWecan() {
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
           icon={<IoStar className="text-yellow-300" />}
         >
-          <h3 className="vertical-timeline-element-title h3 capitalize text-black">
+          <h3 className="vertical-timeline-element-title h3 capitalize text-black ">
             Increase energy levels
           </h3>
           <p>
