@@ -1,11 +1,11 @@
-// app/layout.tsx
+// app/layout.jsx
 
 import { Inter, League_Spartan } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import NavBar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import GoogleAnalytics from './components/GoogleAnalytics';
+import { GA_TRACKING_ID } from './lib/gtag'; // Import GA_TRACKING_ID
 
 const inter = Inter({ subsets: ['latin'] });
 const leagueSpartan = League_Spartan({ subsets: ['latin'] });
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         {/* Google Analytics Scripts */}
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} // Use GA_TRACKING_ID
         />
         <Script
           id="google-analytics"
@@ -33,13 +33,12 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${gtag.GA_TRACKING_ID}', {
+              gtag('config', '${GA_TRACKING_ID}', {
                 page_path: window.location.pathname,
               });
             `,
           }}
         />
-        <GoogleAnalytics />
         <NavBar />
         {children}
         <Footer />
