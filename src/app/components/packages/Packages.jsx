@@ -1,6 +1,7 @@
-"use client";
+"use client"
 import { FaCheckCircle } from "react-icons/fa";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
+import { event } from '../../lib/gtag'; // Import the event function from gtag
 
 const packages = [
   {
@@ -34,8 +35,8 @@ const packages = [
       "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
       "Medical consultation",
     ],
-    bgColor: "#c5ff7c30",
-    borderColor: "#D4FF9E",
+    bgColor: "#112308",
+    borderColor: "#30B43C",
     buttonBgColor: "#30B43C",
     buttonHoverColor: "#7CFF88",
     textColor: "#30B43C",
@@ -67,6 +68,15 @@ const PackageCard = ({ pkg }) => {
   const router = useRouter();
 
   const handleButtonClick = () => {
+    // Track the button click event
+    event({
+      action: 'click',
+      category: 'Package',
+      label: pkg.name,
+      value: pkg.price,
+    });
+
+    // Navigate to the package detail page
     router.push(`/packages/${encodeURIComponent(pkg.name)}`);
   };
 
@@ -74,7 +84,7 @@ const PackageCard = ({ pkg }) => {
     <div
       className={`relative text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between overflow-hidden ${
         pkg.isHighlighted ? "lg:transform xl:scale-110 z-10" : ""
-      }`} // Highlights the second package
+      }`}
       style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
       {pkg.isHighlighted && (
