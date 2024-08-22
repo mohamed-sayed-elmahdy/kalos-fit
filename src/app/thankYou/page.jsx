@@ -7,8 +7,11 @@ function page() {
 
   return (
     <div className="flex justify-center items-center h-[100vh] flex-col">
-      <h1>Thank You for Your Purchase, {payerName}!</h1>
-      <p>We appreciate your business and hope you enjoy your package.</p>
+      <h1 className="text-4xl max-w-[750px] textgreen text-center">
+        Hi <span className="text-[#D4FF9E]">{payerName}</span>!, We're delighted you've decided to take a step towards a
+        healthier and happier you with Kalos Fit! Your personalized program
+        arrives in 2-3 business days through your E-mail
+      </h1>
     </div>
   );
 }

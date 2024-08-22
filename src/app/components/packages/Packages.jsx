@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { FaCheckCircle } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { event } from '../../lib/gtag'; // Import the event function from gtag
@@ -8,6 +8,7 @@ const packages = [
     name: "Your New Life Gate",
     period: "1 Month",
     price: 199,
+    oldPrice: 250, // Old price added
     summary: "Your Gate for Your Confident, Healthy, Successful Life",
     features: [
       "A nutrition plan tailored to your needs and desires",
@@ -26,6 +27,7 @@ const packages = [
     name: "Get Ready",
     period: "3 Months",
     price: 597,
+    oldPrice: 750, // Old price added
     summary:
       "Get ready for any important event in your life and shine with a beautiful, fit body",
     features: [
@@ -46,6 +48,7 @@ const packages = [
     name: "Lifestyle",
     period: "6 Months",
     price: 1194,
+    oldPrice: 1500, // Old price added
     summary:
       "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
@@ -90,14 +93,17 @@ const PackageCard = ({ pkg }) => {
       {pkg.isHighlighted && (
         <div
           className="absolute top-4 -right-8 bg-red-500 text-white text-base px-12 py-2 rounded-lg font-semibold"
-          style={{ transform: "rotate(40deg)", fontStyle: "italic" }} 
+          style={{ transform: "rotate(40deg)", fontStyle: "italic" }}
         >
           Best Offer
         </div>
       )}
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
-        <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
+        <div className="text-5xl my-5 font-semibold">
+          <span className="line-through text-gray-400 italic text-4xl">${pkg.oldPrice}</span>{' '}
+          <span>${pkg.price}</span>
+        </div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
         <ul className="my-6">
