@@ -1,6 +1,6 @@
 // lib/gtag.js
 
-export const GA_TRACKING_ID = 'G-VN6GK3Y0ZV'; // Replace with your actual tracking ID
+export const GA_TRACKING_ID = 'G-03DK7J3RTN'; // Replace with your actual tracking ID
 
 // Log page views
 export const pageview = (url) => {
