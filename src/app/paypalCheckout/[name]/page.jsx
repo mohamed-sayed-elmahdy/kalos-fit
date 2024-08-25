@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { FaCheckCircle } from "react-icons/fa"; 
+import { FaCheckCircle } from "react-icons/fa";
 import PayPalCheckout from "../../components/PayPalButton";
-
+import Image from "next/image";
 const packages = [
   {
     name: "Your New Life Gate",
@@ -83,17 +83,30 @@ export default function CheckoutPage({ params }) {
   }
 
   return (
-    <div className="w-full mt-28 flex items-center justify-center gap-4 lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
+    <div className="w-full md:mt-56 my-36 flex items-center justify-center gap-1 md:gap-4 lg:gap-12 md:px-16 flex-wrap max-sm:px-[10px]">
       <div>
         <h1 className="text-4xl mb-4 max-w-96">
-          You chose the <span className="textgreen">{selectedPackage.name}</span> package
+          You chose the{" "}
+          <span className="textgreen">{selectedPackage.name}</span> package
         </h1>
 
         <PackageCard pkg={selectedPackage} />
       </div>
 
-      <div className="flex items-center justify-center bg-black max-sm:w-full max-w-96 max-md:my-7">
-        <PayPalCheckout selectedPackage={selectedPackage} />
+      <div className="flex items-center justify-center bg-black max-sm:w-full max-w-96 max-md:my-7 flex-col">
+        <div className="bg-[#112308] border-[#30B43C] border text-xl rounded-3xl mb-2 w-full flex items-center justify-center p-2 md:p-3 gap-3">
+          <Image
+            src="/greenLogoedited.png"
+            alt="Logo"
+            width={120}
+            height={16}
+         
+          />
+          <h4 className="text-base mt-2 font-extrabold">
+            Start your journey to become the best version of you
+          </h4>
+        </div>
+        <PayPalCheckout selectedPackage={selectedPackage}  />
       </div>
     </div>
   );
@@ -103,7 +116,7 @@ const PackageCard = ({ pkg }) => {
   const [showFeatures, setShowFeatures] = useState(false);
 
   const handleToggle = () => {
-    setShowFeatures(prevState => !prevState);
+    setShowFeatures((prevState) => !prevState);
   };
 
   return (
@@ -116,7 +129,11 @@ const PackageCard = ({ pkg }) => {
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
-        <div className={`transition-all duration-500 overflow-hidden ${showFeatures ? 'max-h-screen' : 'max-h-0'}`}>
+        <div
+          className={`transition-all duration-500 overflow-hidden ${
+            showFeatures ? "max-h-screen" : "max-h-0"
+          }`}
+        >
           <ul className="my-6 transition-all duration-500">
             {pkg.features.map((feature, index) => (
               <li
@@ -138,7 +155,7 @@ const PackageCard = ({ pkg }) => {
           className="self-center w-60 text-white hover:text-black font-bold py-2 rounded-full text-xl transition-all duration-500 hover:bg-[#D4FF9E] bg-[#30B43C] mt-3"
           onClick={handleToggle}
         >
-          {showFeatures ? 'See Less' : 'See More'}
+          {showFeatures ? "See Less" : "See More"}
         </button>
       </div>
     </div>
