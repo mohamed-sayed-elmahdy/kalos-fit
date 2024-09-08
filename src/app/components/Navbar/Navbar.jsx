@@ -60,7 +60,7 @@ function NavBar() {
                     Home
                   </Link>
                 </li>
-                <li
+                {/* <li
                   className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/about"
                   )}`}
@@ -68,8 +68,8 @@ function NavBar() {
                   <Link href="/about" onClick={() => setNavbar(!navbar)}>
                     About
                   </Link>
-                </li>
-                <li
+                </li> */}
+                {/* <li
                   className={`text-lg   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/blog"
                   )}`}
@@ -77,8 +77,8 @@ function NavBar() {
                   <Link href="/blog" onClick={() => setNavbar(!navbar)}>
                     Blog
                   </Link>
-                </li>
-                <li
+                </li> */}
+                {/* <li
                   className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/packages"
                   )}`}
@@ -86,8 +86,8 @@ function NavBar() {
                   <Link href="/packages" onClick={() => setNavbar(!navbar)}>
                     Packages
                   </Link>
-                </li>
-                <li
+                </li> */}
+                {/* <li
                   className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/contact"
                   )}`}
@@ -95,7 +95,7 @@ function NavBar() {
                   <Link href="/contact" onClick={() => setNavbar(!navbar)}>
                     Contact
                   </Link>
-                </li>
+                </li> */}
                 <PackageButton
                 path="/packages"
                   onClick={() => setNavbar(!navbar)}
