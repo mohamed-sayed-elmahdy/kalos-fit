@@ -1,66 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname,useRouter } from "next/navigation";
-
-const packages = [
-  {
-    name: "Your New Life Gate",
-    period: "1 Month",
-    price: 199,
-    summary: "Your Gate for Your Confident, Healthy, Successful Life",
-    features: [
-      "A nutrition plan tailored to your needs and desires",
-      "A Workout plan from home or at home tailored to your level",
-      "A suggested system for supplements if you want to use them",
-      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
-      "Medical consultation",
-    ],
-    bgColor: "#112308",
-    borderColor: "#30B43C",
-    buttonBgColor: "#30B43C",
-    buttonHoverColor: "#7CFF88",
-    textColor: "#30B43C",
-  },
-  {
-    name: "Get Ready",
-    period: "3 Months",
-    price: 597,
-    summary:
-      "Get ready for any important event in your life and shine with a beautiful, fit body",
-    features: [
-      "A nutrition plan tailored to your needs and desires",
-      "A Workout plan from home or at home tailored to your level",
-      "A suggested system for supplements if you want to use them",
-      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
-      "Medical consultation",
-    ],
-    bgColor: "#112308",
-    borderColor: "#30B43C",
-    buttonBgColor: "#30B43C",
-    buttonHoverColor: "#7CFF88",
-    textColor: "#30B43C",
-  },
-  {
-    name: "Lifestyle",
-    period: "6 Months",
-    price: 1194,
-    summary:
-      " this package designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
-    features: [
-      "A nutrition plan tailored to your needs and desires",
-      "A Workout plan from home or at home tailored to your level",
-      "A suggested system for supplements if you want to use them",
-      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
-      "Weekly follow-up via Zoom With your nutrition & training Coach",
-      "Medical consultation",
-    ],
-    bgColor: "#112308",
-    borderColor: "#30B43C",
-    buttonBgColor: "#30B43C",
-    buttonHoverColor: "#7CFF88",
-    textColor: "#30B43C",
-  },
-];
+import { usePathname, useRouter } from "next/navigation";
 
 export default function CustomForm() {
   const pathname = usePathname();
@@ -76,12 +16,9 @@ export default function CustomForm() {
     weight: "",
     currentDisease: "",
     medications: "",
-    disciplined: "",
-    agreeInstructions: "",
     gymTrainingDuration: "",
     exerciseExperience: "",
     gymDaysPerWeek: "",
-    activities: "",
     followUpGoal: "",
     foodAllergy: "",
     smoke: "",
@@ -89,10 +26,7 @@ export default function CustomForm() {
     cookHealthy: "",
     followRecipes: "",
     similarMeals: "",
-    waterIntake: "",
     nutritionExperience: "",
-    mainProblem: "",
-    mealsLike: "",
     mealsDislike: "",
     understandDietImportance: "",
   });
@@ -104,7 +38,6 @@ export default function CustomForm() {
     const name = segments[segments.length - 1];
     setPackageName(decodeURIComponent(name));
   }, [pathname]);
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -168,39 +101,6 @@ export default function CustomForm() {
     return valid;
   };
 
-  const fillTestData = () => {
-    setFormData({
-      name: "John Doe",
-      age: "30",
-      whatsapp: "1234567890",
-      occupation: "Software Engineer",
-      email: "john.doe@example.com",
-      height: "180",
-      weight: "75",
-      currentDisease: "None",
-      medications: "None",
-      disciplined: "Yes",
-      agreeInstructions: "Yes",
-      gymTrainingDuration: "2 years",
-      exerciseExperience: "8",
-      gymDaysPerWeek: "5",
-      activities: "Running, Swimming",
-      followUpGoal: "Lose 5kg",
-      foodAllergy: "None",
-      smoke: "No",
-      drink: "No",
-      cookHealthy: "Yes",
-      followRecipes: "Yes",
-      similarMeals: "Yes",
-      waterIntake: "3",
-      nutritionExperience: "1",
-      mainProblem: "Time management",
-      mealsLike: "Chicken, Rice",
-      mealsDislike: "Fish",
-      understandDietImportance: "Yes",
-    });
-  };
-
   const Submit = (e) => {
     e.preventDefault();
     if (!validateForm()) {
@@ -210,18 +110,15 @@ export default function CustomForm() {
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
-      "https://script.google.com/macros/s/AKfycbxdgtmI01Dule-3mD1_lugdg6-U6ZCz01WF-9dwUy7ugFgaY33cUlLzMzAOZGp9zGV40Q/exec",
+      "https://script.google.com/macros/s/AKfycbwnuuTYe1Hm5v2SskbpbjqN8Qji48oV2OLlFZM8R13frGjEZUV0jPtUbVWckZ4xzRLDAQ/exec",
       {
         method: "POST",
         body: formDatab,
-        mode: "no-cors",
       }
     )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-
-        
       })
       .catch((error) => {
         console.log(error);
@@ -237,12 +134,9 @@ export default function CustomForm() {
       weight: "",
       currentDisease: "",
       medications: "",
-      disciplined: "",
-      agreeInstructions: "",
       gymTrainingDuration: "",
       exerciseExperience: "",
       gymDaysPerWeek: "",
-      activities: "",
       followUpGoal: "",
       foodAllergy: "",
       smoke: "",
@@ -250,17 +144,11 @@ export default function CustomForm() {
       cookHealthy: "",
       followRecipes: "",
       similarMeals: "",
-      waterIntake: "",
       nutritionExperience: "",
-      mainProblem: "",
-      mealsLike: "",
       mealsDislike: "",
       understandDietImportance: "",
     });
     router.push(`/paypalCheckout/${encodeURIComponent(packageName)}`);
-
-
-  
   };
 
   return (
@@ -449,52 +337,12 @@ export default function CustomForm() {
 
           <div>
             <label className="block text-sm font-bold text-black pl-2">
-              Are you disciplined person with your diet and workout ?
-            </label>
-            <input
-              type="text"
-              name="disciplined"
-              value={formData.disciplined}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              Following the instructions is so important for progress , Do you
-              Agree ?
-            </label>
-            <input
-              type="text"
-              name="agreeInstructions"
-              value={formData.agreeInstructions}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
               How long did you train at gym till now ?
             </label>
             <input
               type="text"
               name="gymTrainingDuration"
               value={formData.gymTrainingDuration}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              Tell me about activities you like to do ?
-            </label>
-            <input
-              type="text"
-              name="activities"
-              value={formData.activities}
               onChange={handleChange}
               className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
             />
@@ -521,46 +369,6 @@ export default function CustomForm() {
               type="text"
               name="foodAllergy"
               value={formData.foodAllergy}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              How much water do you drink daily (in liters)?
-            </label>
-            <input
-              type="number"
-              name="waterIntake"
-              value={formData.waterIntake}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              What do you think that would be the main problem considering
-              following your diet plan ?
-            </label>
-            <input
-              type="text"
-              name="mainProblem"
-              value={formData.mainProblem}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              Which meals you like ?
-            </label>
-            <input
-              type="text"
-              name="mealsLike"
-              value={formData.mealsLike}
               onChange={handleChange}
               className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
             />
@@ -798,14 +606,6 @@ export default function CustomForm() {
               ))}
             </div>
           </div>
-
-          {/* <button
-            type="button"
-            onClick={fillTestData}
-            className="px-4 py-2 bg-gray-600 text-white rounded-lg"
-          >
-            Fill Test Data
-          </button> */}
 
           <button
             type="submit"
