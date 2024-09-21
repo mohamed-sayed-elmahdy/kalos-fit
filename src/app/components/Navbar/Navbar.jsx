@@ -16,7 +16,11 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="text-white w-full fixed top-0 left-0 right-0 z-[120] bg-custom-bg shadow-custom-shadow backdrop-blur-custom-blur pt-1">
+      <nav
+        className={`text-white w-full fixed top-0 left-0 right-0 z-[120] bg-custom-bg shadow-custom-shadow backdrop-blur-custom-blur pt-1 ${
+          pathname === "/about" ? "bg-black" : ""
+        }`}
+      >
         <div className="justify-between px-4 mx-auto md:items-center md:flex md:px-6 lg:px-9">
           <div>
             <div className="flex items-center justify-between py-3 md:py-4 md:pt-2 md:block">
@@ -60,7 +64,7 @@ function NavBar() {
                     Home
                   </Link>
                 </li>
-                {/* <li
+                <li
                   className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/about"
                   )}`}
@@ -68,7 +72,7 @@ function NavBar() {
                   <Link href="/about" onClick={() => setNavbar(!navbar)}>
                     About
                   </Link>
-                </li> */}
+                </li>
                 {/* <li
                   className={`text-lg   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/blog"
@@ -97,7 +101,7 @@ function NavBar() {
                   </Link>
                 </li> */}
                 <PackageButton
-                path="/packages"
+                  path="/packages"
                   onClick={() => setNavbar(!navbar)}
                   parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 md:hidden lg:flex"
                   buttonStyling="py-2 px-8 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"

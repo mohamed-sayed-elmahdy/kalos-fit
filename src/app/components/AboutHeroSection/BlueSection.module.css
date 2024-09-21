@@ -1,0 +1,57 @@
+.blueSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 0, 0) 20%,
+    #00000069,
+    #000000
+  ) , url("../../../../public/anna-pelzer-IGfIGP5ONV0-unsplash.jpg");
+  background-size: auto 100%;
+  background-position: center;
+  border-radius: 0 0 55px 55px;
+padding: 0.5rem;
+  width: 100%;
+}
+.blueSectionTitle {
+  font-size: 55px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-top: 15rem;
+  text-align: center;
+
+}
+.Pargraph {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 15rem;
+  max-width: 650px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .Pargraph {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .blueSectionTitle {
+    font-size: 50px;
+  }
+  .Pargraph {
+    width: 83%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .blueSectionTitle {
+    font-size: 40px;
+  }
+  .Pargraph {
+    width: 96%;
+  }
+}
+
