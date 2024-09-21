@@ -116,7 +116,7 @@ function HowWecan() {
       </VerticalTimeline>
       <div className=" w-full flex items-center justify-center ">
         <PackageButton
-          path="/packages"
+          path="/about"
           children="Learn More"
           parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 lg:flex mr-6"
           buttonStyling="py-2 px-12 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"
