@@ -15,8 +15,8 @@ const AboutUs = () => {
       {/* Cards Section */}
       <div className="flex justify-center flex-wrap gap-10 items-stretch py-2 px-5 md:px-20">
         {/* Unique Plans Card */}
-        <div className="bg-black shadow-lg rounded-lg p-8 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
-          <h3 className="text-2xl font-semibold text-white mb-4">
+        <div className="bg-black shadow-lg rounded-lg px-6 py-5 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
+          <h3 className="text-base md:text-2xl font-semibold text-white mb-4 border-2 border-[#30B43C] py-1 px-3 w-fit rounded-3xl bg-gradient-to-b from-[#30b43b75] to-black">
             Unique Plans for Unique Women
           </h3>
           <p className="text-white">
@@ -27,8 +27,8 @@ const AboutUs = () => {
         </div>
 
         {/* Sustainable & Delicious Card */}
-        <div className="bg-black shadow-lg rounded-lg p-8 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
-          <h3 className="text-2xl font-semibold text-white mb-4">
+        <div className="bg-black shadow-lg rounded-lg px-6 py-5 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
+          <h3 className="text-base md:text-2xl font-semibold text-white mb-4 border-2 border-[#30B43C] py-1 px-3 w-fit rounded-3xl bg-gradient-to-b from-[#30b43b75] to-black">
             Sustainable & Delicious
           </h3>
           <p className="text-white">
@@ -38,8 +38,8 @@ const AboutUs = () => {
         </div>
 
         {/* Support Every Step Card */}
-        <div className="bg-black shadow-lg rounded-lg p-8 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
-          <h3 className="text-2xl font-semibold text-white mb-4">
+        <div className="bg-black shadow-lg rounded-lg px-6 py-5 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
+          <h3 className="text-base md:text-2xl font-semibold text-white mb-4 border-2 border-[#30B43C] py-1 px-3 w-fit rounded-3xl bg-gradient-to-b from-[#30b43b75] to-black">
             Support Every Step of the Way
           </h3>
           <p className="text-white">
@@ -49,8 +49,8 @@ const AboutUs = () => {
         </div>
 
         {/* Feel the Difference Card */}
-        <div className="bg-black shadow-lg rounded-lg p-8 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
-          <h3 className="text-2xl font-semibold text-white mb-4">
+        <div className="bg-black shadow-lg rounded-lg px-6 py-5 hover:shadow-slate-50 transition duration-300 max-w-[480px] max-md:shadow-slate-50">
+          <h3 className="text-base md:text-2xl font-semibold text-white mb-4 border-2 border-[#30B43C] py-1 px-3 w-fit rounded-3xl bg-gradient-to-b from-[#30b43b75] to-black">
             Feel the Difference
           </h3>
           <p className="text-white">
