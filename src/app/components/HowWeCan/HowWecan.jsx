@@ -7,6 +7,10 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import PackageButton from "../PackageButton/PackageButton";
+import { GiHealthPotion } from "react-icons/gi";
+import { GiWeightScale } from "react-icons/gi";
+import { MdEnergySavingsLeaf } from "react-icons/md";
+import { IoMdTime } from "react-icons/io";
 
 
 function HowWecan() {
@@ -27,7 +31,7 @@ function HowWecan() {
           }}
           contentArrowStyle={{ borderRight: "10px solid  #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
-          icon={<IoStar className="text-yellow-300" />}
+          icon={<GiHealthPotion className="text-yellow-300" />}
         >
           <h3 className="vertical-timeline-element-title h3 text-black">
             Improve health:
@@ -50,7 +54,7 @@ function HowWecan() {
           }}
           contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
-          icon={<IoStar className="text-yellow-300" />}
+          icon={<GiWeightScale className="text-yellow-300" />}
         >
           <h3 className="vertical-timeline-element-title h3 capitalize text-black">
             Weight management:
@@ -75,7 +79,7 @@ function HowWecan() {
           }}
           contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
-          icon={<IoStar className="text-yellow-300" />}
+          icon={<MdEnergySavingsLeaf className="text-yellow-300" />}
         >
           <h3 className="vertical-timeline-element-title h3 capitalize text-black ">
             Increase energy levels
@@ -101,7 +105,7 @@ function HowWecan() {
           }}
           contentArrowStyle={{ borderRight: "10px solid   #30B43C" }}
           iconStyle={{ background: "rgb(0, 0, 0)", color: "#fff" }}
-          icon={<IoStar className="text-yellow-300" />}
+          icon={<IoMdTime className="text-yellow-300" />}
         >
           <h3 className="vertical-timeline-element-title h3 capitalize text-black">
             Time-saving and convenience
