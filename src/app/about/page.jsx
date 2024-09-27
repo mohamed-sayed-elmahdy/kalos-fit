@@ -85,7 +85,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Vision */}
+        {/*Vision*/}
         <div>
           <h3 className="text-5xl font-bold text-[#30B43C]">Our Vision</h3>
           <p className="text-white mt-4 max-w-2xl mx-auto">
