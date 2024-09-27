@@ -165,7 +165,7 @@ export default function ContactPage() {
         </form>
         {/* loading */}
         {loadingVisible && (
-          <div className="w-full h-full fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+          <div className="w-full h-full fixed inset-0  bg-opacity-75 flex justify-center items-center">
             <Loading className="w-full"/>
           </div>
         )}
