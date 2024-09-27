@@ -12,7 +12,7 @@ export default function ContactPage() {
     message: "",
   });
   const [popupVisible, setPopupVisible] = useState(false);
-  const [loadingVisible, setloadingVisible] = useState(true);
+  const [loadingVisible, setloadingVisible] = useState(false);
   const [popUpMessage, setpopUpMessage] = useState("");
 
   const handleChange = (e) => {
