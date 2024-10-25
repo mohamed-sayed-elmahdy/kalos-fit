@@ -7,7 +7,7 @@ const packages = [
   {
     name: "Your New Life Gate",
     period: "1 Month",
-    price: 199,
+    price: 150,
     oldPrice: 250, // Old price added
     summary: "Your Gate for Your Confident, Healthy, Successful Life",
     features: [
@@ -26,7 +26,7 @@ const packages = [
   {
     name: "Get Ready",
     period: "3 Months",
-    price: 597,
+    price: 450,
     oldPrice: 750, // Old price added
     summary:
       "Get ready for any important event in your life and shine with a beautiful, fit body",
@@ -47,7 +47,7 @@ const packages = [
   {
     name: "Lifestyle",
     period: "6 Months",
-    price: 1194,
+    price: 850,
     oldPrice: 1500, // Old price added
     summary:
       "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
