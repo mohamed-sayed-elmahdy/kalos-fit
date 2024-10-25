@@ -101,8 +101,9 @@ const PackageCard = ({ pkg }) => {
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold">
-          <span className="line-through text-gray-400 italic text-4xl">${pkg.oldPrice}</span>{' '}
+          <span className="line-through text-gray-400 italic text-4xl mr-3">${pkg.oldPrice}</span>
           <span>${pkg.price}</span>
+          <span className="text-[13px] ml-2 text-gray-100 bg-red-500 py-[6px] px-3  rounded-xl"><span className="">{pkg.oldPrice - pkg.price}$ </span>Discont </span>
         </div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
