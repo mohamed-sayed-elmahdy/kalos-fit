@@ -1,4 +1,5 @@
 // app/layout.jsx
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Inter, League_Spartan } from 'next/font/google';
 import Script from 'next/script';
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <Analytics />
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
