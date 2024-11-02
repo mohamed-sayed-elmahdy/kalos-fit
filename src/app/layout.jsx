@@ -1,5 +1,5 @@
 // app/layout.jsx
-
+import { Analytics } from '@vercel/analytics/react';
 import { Inter, League_Spartan } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -42,6 +42,7 @@ export default function RootLayout({ children }) {
         
         <NavBar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
