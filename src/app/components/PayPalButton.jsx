@@ -1,6 +1,6 @@
 "use client"; 
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useStore from "../functions/store"; 
 
