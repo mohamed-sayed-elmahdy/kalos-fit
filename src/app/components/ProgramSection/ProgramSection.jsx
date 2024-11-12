@@ -9,10 +9,11 @@ const ProgramCard = ({ src, alt, title, description }) => (
         className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
         src={src}
         alt={alt}
-        layout="fill" // تعبئة الصورة حسب الحاوية
-        objectFit="cover" // لضبط الصورة
-        quality={75} // جودة الصورة لتحسين الأداء
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // إعداد الصور لتناسب الأجهزة المختلفة
+        layout="fill" 
+        objectFit="cover" 
+        quality={75} 
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+        fetchPriority="low"
       />
     </div>
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
