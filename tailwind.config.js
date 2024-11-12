@@ -25,6 +25,11 @@ module.exports = {
       colors: {
         'custom-green': '#30B43C',
       },
+      translate: {
+        '68': '68%',
+        '71': '71%',
+        '75': '75%',
+      },
     },
   },
   plugins: [],
