@@ -16,7 +16,7 @@ import { IoMdTime } from "react-icons/io";
 function HowWecan() {
   return (
     <div className="flex flex-col justify-center items-center my-7 ">
-      <h1 className="h1 text-gradient my-12 text-center">
+      <h1 className="h1 text-gradient my-8 text-center">
         How We Can Help You
       </h1>
       <VerticalTimeline lineColor="#D4FF9E" animate={true}>
