@@ -13,9 +13,9 @@ function HeroSection() {
             Discover Your Best <br />
             Self with <span className="textgreen font-bold">Kalos Fit</span>
           </h1>
-          <p >
+          <p className="sm:max-w-[500px] mb-8 text-white/80">
             Welcome to
-            <span > Kalos Fit,</span> your
+            <span className="textgreen font-semibold"> Kalos Fit,</span> your
             empowering partner in health and wellness!,We understand the unique
             challenges you face when it comes to nutrition. Between work,
             family, and daily commitments, it's easy to feel overwhelmed and
