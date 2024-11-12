@@ -1,13 +1,14 @@
 // app/layout.jsx
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import { League_Spartan } from 'next/font/google';
+import { Inter, League_Spartan } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import NavBar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { GA_TRACKING_ID } from './lib/gtag'; // Import GA_TRACKING_ID
 
+const inter = Inter({ subsets: ['latin'] });
 const leagueSpartan = League_Spartan({ subsets: ['latin'] });
 
 export const metadata = {
