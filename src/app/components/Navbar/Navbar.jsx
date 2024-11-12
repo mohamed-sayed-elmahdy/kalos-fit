@@ -31,6 +31,8 @@ function NavBar() {
                   alt="Logo"
                   width={150}
                   height={20}
+                  decoding="async"
+                  loading="lazy"
                 />
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
