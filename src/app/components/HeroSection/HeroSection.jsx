@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import PackageButton from "../PackageButton/PackageButton";
 import Photo from "../Photo";
 import Social from "../Social";
