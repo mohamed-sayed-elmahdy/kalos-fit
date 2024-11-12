@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
       <body className={`${leagueSpartan.className}`}>
         {/* Google Analytics Scripts */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} // Use GA_TRACKING_ID
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
