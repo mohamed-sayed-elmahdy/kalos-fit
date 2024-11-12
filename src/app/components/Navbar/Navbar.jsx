@@ -56,7 +56,7 @@ function NavBar() {
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex md:mt-[0px] lg:gap-0">
                 <li
-                  className={`text-lg   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
+                  className={`text-base   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/"
                   )}`}
                 >
@@ -65,7 +65,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <li
-                  className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
+                  className={`text-base   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/about"
                   )}`}
                 >
@@ -74,7 +74,7 @@ function NavBar() {
                   </Link>
                 </li>
                 {/* <li
-                  className={`text-lg   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
+                  className={`text-base  pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/blog"
                   )}`}
                 >
@@ -83,7 +83,7 @@ function NavBar() {
                   </Link>
                 </li> */}
                 <li
-                  className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
+                  className={`text-base   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/packages"
                   )}`}
                 >
@@ -92,7 +92,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <li
-                  className={`text-lg    pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
+                  className={`text-base   pt-2 pb-0 px-5 text-center border-b-2 md:border-b-0 mb-5 md:mb-0 hover:bg-[#30B43C] border-[#30B43C] md:hover:text-[#30B43C] md:hover:bg-transparent transition-colors ${isActive(
                     "/contact"
                   )}`}
                 >
