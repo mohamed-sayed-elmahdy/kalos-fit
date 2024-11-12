@@ -10,8 +10,7 @@ function Page() {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="/Longtermweightloss.jpg
-"
+                src="/Longtermweightloss.webp"
                 alt="Longtermweightloss"
               />
             </div>
@@ -32,7 +31,7 @@ function Page() {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="/Getready.jpg"
+                src="/Getready.webp"
                 alt="Getready"
               />
             </div>
@@ -52,7 +51,7 @@ function Page() {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="Longtermweightgain.jpg"
+                src="Longtermweightgain.webp"
                 alt="Longtermweightgain"
               />
             </div>
@@ -72,7 +71,7 @@ function Page() {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="Lifestyle.jpg"
+                src="Lifestyle.webp"
                 alt="Lifestyle"
               />
             </div>
