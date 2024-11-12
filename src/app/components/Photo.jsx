@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import girlImg from "../../../public/heroSectionPhotoSmall.webp";
+import girlImg from "../../../public/heroSectionPhoto.webp";
 function Photo() {
   return (
     <div className="w-full h-full relative">
