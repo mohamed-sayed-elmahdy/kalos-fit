@@ -9,11 +9,11 @@ function HeroSection() {
       <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 ">
         {/* text */}
         <div className="text-center xl:text-left order-2 xl:order-none">
-          <h1 className="h1 mb-1 ">
+          <h1 className="text-[32px] mb-1 font-semibold">
             Discover Your Best <br />
             Self with <span className="textgreen font-bold">Kalos Fit</span>
           </h1>
-          <p className="sm:max-w-[500px] mb-8 text-white/80">
+          <p className="sm:max-w-[500px] mb-8 text-white/90">
             Welcome to
             <span className="textgreen font-semibold"> Kalos Fit,</span> your
             empowering partner in health and wellness!,We understand the unique
