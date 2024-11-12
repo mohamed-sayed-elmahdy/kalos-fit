@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import girlImg from "../../../public/heroSectionPhotoEdited - Copy.png";
+import girlImg from "../../../public/heroSectionPhoto.webp";
 function Photo() {
   return (
     <div className="w-full h-full relative">
@@ -23,7 +23,7 @@ function Photo() {
           className="w-[285px] h-[285px] xl:w-[485px] xl:h-[485px] mix-blend-lighten absolute left-6"
         >
           <Image
-            // src="/heroSectionPhotoEdited.png "
+          
             src={girlImg}
             priority
             loading="eager"
