@@ -10,25 +10,18 @@ export default function CustomForm() {
     name: "",
     age: "",
     whatsapp: "",
-    occupation: "",
     email: "",
     height: "",
     weight: "",
     currentDisease: "",
     medications: "",
-    gymTrainingDuration: "",
-    exerciseExperience: "",
     gymDaysPerWeek: "",
     followUpGoal: "",
     foodAllergy: "",
     smoke: "",
     drink: "",
     cookHealthy: "",
-    followRecipes: "",
     similarMeals: "",
-    nutritionExperience: "",
-    mealsDislike: "",
-    understandDietImportance: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -65,11 +58,6 @@ export default function CustomForm() {
 
     if (!formData.whatsapp.trim()) {
       newErrors.whatsapp = "WhatsApp number is required.";
-      valid = false;
-    }
-
-    if (!formData.occupation.trim()) {
-      newErrors.occupation = "Occupation is required.";
       valid = false;
     }
 
@@ -112,7 +100,6 @@ export default function CustomForm() {
 
     formDatab.append("packageName", packageName);
 
-    
     fetch(
       "https://script.google.com/macros/s/AKfycbwHGsH225JVHA-_ZFonhSHJL3cX1snvlQ_wZDLdtGiT5lWXevabD8pYJAgK_McA19-nJQ/exec",
       {
@@ -132,32 +119,25 @@ export default function CustomForm() {
       name: "",
       age: "",
       whatsapp: "",
-      occupation: "",
       email: "",
       height: "",
       weight: "",
       currentDisease: "",
       medications: "",
-      gymTrainingDuration: "",
-      exerciseExperience: "",
       gymDaysPerWeek: "",
       followUpGoal: "",
       foodAllergy: "",
       smoke: "",
       drink: "",
       cookHealthy: "",
-      followRecipes: "",
       similarMeals: "",
-      nutritionExperience: "",
-      mealsDislike: "",
-      understandDietImportance: "",
     });
     router.push(`/paypalCheckout/${encodeURIComponent(packageName)}`);
   };
 
   return (
     <div
-      className="w-full pt-44 pb-44"
+      className="w-full pt-44 pb-44 px-2"
       style={{
         backgroundImage: "url('/dan-gold.jpg')",
         backgroundSize: "cover",
@@ -170,7 +150,7 @@ export default function CustomForm() {
         </h1>
 
         <form
-          className="grid md:grid-cols-2 gap-1 gap-x-9 px-4  "
+          className="grid md:grid-cols-2 gap-2 gap-x-9 px-4  "
           onSubmit={Submit}
         >
           {/* General Inputs */}
@@ -228,26 +208,6 @@ export default function CustomForm() {
             {errors.whatsapp && (
               <p className="text-red-500 text-sm font-semibold">
                 {errors.whatsapp}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              Occupation
-            </label>
-            <input
-              type="text"
-              name="occupation"
-              value={formData.occupation}
-              onChange={handleChange}
-              className={`mt-[2px] block w-full py-1 pl-2 border-2 outline-none border-transparent rounded-2xl shadow-sm focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base  bg-white/30${
-                errors.occupation ? "border-red-500" : ""
-              }`}
-            />
-            {errors.occupation && (
-              <p className="text-red-500 text-sm font-semibold">
-                {errors.occupation}
               </p>
             )}
           </div>
@@ -341,19 +301,6 @@ export default function CustomForm() {
 
           <div>
             <label className="block text-sm font-bold text-black pl-2">
-              How long did you train at gym till now ?
-            </label>
-            <input
-              type="text"
-              name="gymTrainingDuration"
-              value={formData.gymTrainingDuration}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
               In 3 months follow-up, what will be your goal?
             </label>
             <input
@@ -378,20 +325,27 @@ export default function CustomForm() {
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-bold text-black pl-2">
-              Which meals you don't like ?
-            </label>
-            <input
-              type="text"
-              name="mealsDislike"
-              value={formData.mealsDislike}
-              onChange={handleChange}
-              className="mt-[2px] block  py-1 pl-2 w-full border-transparent rounded-2xl shadow-sm outline-none border-2 focus:ring-[#30B43C] focus:border-[#30B43C] sm:text-base bg-white/30"
-            />
-          </div>
-
           {/* Radio Inputs */}
+          <div className="my-2 flex justify-center items-center flex-col gap-2">
+            <label className="block text-sm font-bold text-black pl-2">
+              How many days per week can you go to the gym? (1 to 7)
+            </label>
+            <div className="flex items-center space-x-4 gap-6 flex-wrap">
+              {[...Array(7).keys()].map((i) => (
+                <div key={i} className="flex items-center flex-col-reverse">
+                  <input
+                    type="radio"
+                    name="gymDaysPerWeek"
+                    value={i + 1}
+                    checked={formData.gymDaysPerWeek === (i + 1).toString()}
+                    onChange={handleChange}
+                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
+                  />
+                  <label className="text-sm text-black">{i + 1}</label>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
@@ -414,75 +368,6 @@ export default function CustomForm() {
                   <label className="text-sm text-black font-bold capitalize">
                     {option}
                   </label>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="my-2 flex justify-center items-center flex-col gap-2">
-            <label className="block text-sm font-bold text-black pl-2">
-              Your experience with exercises (1 to 10)
-            </label>
-            <div className="flex items-center space-x-4 gap-6 flex-wrap">
-              {[...Array(10).keys()].map((i) => (
-                <div key={i} className="flex items-center flex-col-reverse">
-                  <input
-                    type="radio"
-                    name="exerciseExperience"
-                    value={i + 1}
-                    checked={formData.exerciseExperience === (i + 1).toString()}
-                    onChange={handleChange}
-                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
-                  />
-                  <label className="text-base text-black">{i + 1}</label>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="my-2 flex justify-center items-center flex-col gap-2">
-            <label className="block text-sm font-bold text-black pl-2">
-              Would you like to follow healthy recipes?
-            </label>
-            <div className="flex items-center space-x-4 gap-6 flex-wrap">
-              {["yes", "no"].map((option) => (
-                <div
-                  key={option}
-                  className="flex items-center flex-col-reverse"
-                >
-                  <input
-                    type="radio"
-                    name="followRecipes"
-                    value={option}
-                    checked={formData.followRecipes === option}
-                    onChange={handleChange}
-                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
-                  />
-                  <label className="text-sm text-black font-bold capitalize">
-                    {option}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="my-2 flex justify-center items-center flex-col gap-2">
-            <label className="block text-sm font-bold text-black pl-2">
-              Your experience in nutrition (1 to 10)
-            </label>
-            <div className="flex items-center space-x-4 gap-6 flex-wrap">
-              {[...Array(10).keys()].map((i) => (
-                <div key={i} className="flex items-center flex-col-reverse">
-                  <input
-                    type="radio"
-                    name="nutritionExperience"
-                    value={i + 1}
-                    checked={
-                      formData.nutritionExperience === (i + 1).toString()
-                    }
-                    onChange={handleChange}
-                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
-                  />
-                  <label className="text-sm text-black">{i + 1}</label>
                 </div>
               ))}
             </div>
@@ -513,26 +398,7 @@ export default function CustomForm() {
               ))}
             </div>
           </div>
-          <div className="my-2 flex justify-center items-center flex-col gap-2">
-            <label className="block text-sm font-bold text-black pl-2">
-              How many days per week can you go to the gym? (1 to 7)
-            </label>
-            <div className="flex items-center space-x-4 gap-6 flex-wrap">
-              {[...Array(7).keys()].map((i) => (
-                <div key={i} className="flex items-center flex-col-reverse">
-                  <input
-                    type="radio"
-                    name="gymDaysPerWeek"
-                    value={i + 1}
-                    checked={formData.gymDaysPerWeek === (i + 1).toString()}
-                    onChange={handleChange}
-                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
-                  />
-                  <label className="text-sm text-black">{i + 1}</label>
-                </div>
-              ))}
-            </div>
-          </div>
+
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
               Do you smoke?
@@ -561,32 +427,6 @@ export default function CustomForm() {
 
           <div className="my-2 flex justify-center items-center flex-col gap-2">
             <label className="block text-sm font-bold text-black pl-2">
-              Do you know that sticking to your diet is a main factor for your
-              progress?
-            </label>
-            <div className="flex items-center space-x-4 gap-6 flex-wrap">
-              {["yes", "no"].map((option) => (
-                <div
-                  key={option}
-                  className="flex items-center flex-col-reverse"
-                >
-                  <input
-                    type="radio"
-                    name="understandDietImportance"
-                    value={option}
-                    checked={formData.understandDietImportance === option}
-                    onChange={handleChange}
-                    className="h-[18px] w-[18px] text-black border-gray-300 focus:ring-black accent-black   "
-                  />
-                  <label className="text-sm text-black font-bold capitalize">
-                    {option}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="my-2 flex justify-center items-center flex-col gap-2">
-            <label className="block text-sm font-bold text-black pl-2">
               Do you drink?
             </label>
             <div className="flex items-center space-x-4 gap-6 flex-wrap">
@@ -613,7 +453,7 @@ export default function CustomForm() {
 
           <button
             type="submit"
-            className="w-fit mt-10 bg-[white] text-black py-1.5 px-20 text-lg font-bold rounded-3xl hover:bg-[black] hover:text-white transition-all duration-500"
+            className="w-fit mt-10 bg-[white] text-black py-1.5 px-20 text-lg font-bold rounded-3xl hover:bg-[black] hover:text-white transition-all duration-500 self-center justify-self-center"
           >
             Submit
           </button>
