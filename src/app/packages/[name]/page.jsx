@@ -101,7 +101,7 @@ export default function CustomForm() {
     formDatab.append("packageName", packageName);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbwHGsH225JVHA-_ZFonhSHJL3cX1snvlQ_wZDLdtGiT5lWXevabD8pYJAgK_McA19-nJQ/exec",
+      "https://script.google.com/macros/s/AKfycbyddvWjRiyRqU7EHbBecwAX6Y0urmx4-UeAV4BtiLnVK1JoBs4otYr-QnOg6G4xf2Fqug/exec",
       {
         method: "POST",
         body: formDatab,
