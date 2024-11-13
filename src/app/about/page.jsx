@@ -1,7 +1,5 @@
-
-import dynamic from 'next/dynamic';
-const PackageButton = dynamic(() => import('../components/PackageButton/PackageButton'), { ssr: false });
-const AboutHeroSection = dynamic(() => import('../components/AboutHeroSection/AboutHeroSection'), { ssr: false });
+import PackageButton from "../components/PackageButton/PackageButton";
+import AboutHeroSection from "../components/AboutHeroSection/AboutHeroSection";
 
 const AboutUs = () => {
   return (
