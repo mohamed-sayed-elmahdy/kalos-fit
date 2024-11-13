@@ -51,12 +51,12 @@ export default function Footer() {
           <Link href="/" className={styles.linkmenu}>
             Home
           </Link>
-          <Link href="/aboutUs" className={styles.linkmenu}>
+          <Link href="/about" className={styles.linkmenu}>
             About Us
           </Link>
-          <Link href="/blog" className={styles.linkmenu}>
+          {/* <Link href="/blog" className={styles.linkmenu}>
             Blog
-          </Link>
+          </Link> */}
           <Link href="/packages" className={styles.linkmenu}>
             Packages
           </Link>
