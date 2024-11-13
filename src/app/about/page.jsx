@@ -1,5 +1,8 @@
-import PackageButton from "../components/PackageButton/PackageButton";
-import AboutHeroSection from "../components/AboutHeroSection/AboutHeroSection";
+
+import dynamic from 'next/dynamic';
+const PackageButton = dynamic(() => import('../components/PackageButton/PackageButton'), { ssr: false });
+const AboutHeroSection = dynamic(() => import('../components/AboutHeroSection/AboutHeroSection'), { ssr: false });
+
 const AboutUs = () => {
   return (
     <section className=" w-full bg-gradient-to-b from-[#30B43C] to-black ">
