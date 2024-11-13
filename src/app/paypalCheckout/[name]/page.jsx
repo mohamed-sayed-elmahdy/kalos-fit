@@ -26,7 +26,7 @@ const packages = [
   {
     name: "Get Ready",
     period: "3 Months",
-    price: 450,
+    price: 399,
     summary:
       "Get ready for any important event in your life and shine with a beautiful, fit body",
     features: [
