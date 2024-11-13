@@ -63,14 +63,12 @@ const AboutUs = () => {
 
       {/* Button */}
       <div className="text-center mt-16  px-5 md:px-20">
-  
         <PackageButton
-                  path="/packages"
-                  
-                  parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 md:hidden lg:flex"
-                  buttonStyling="py-2 px-8 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"
-                  children="Explore Our Packages"
-                />
+          path="/packages"
+          parentStyling="mt-10 md:mt-0 flex justify-center items-center lg:ml-6 md:hidden lg:flex"
+          buttonStyling="py-2 px-8 bg-[#30B43C] text-[#FFFFFF] rounded-3xl capitalize lg:text-base hover:bg-[#D4FF9E] hover:text-black font-medium transition-all"
+          children="Explore Our Packages"
+        />
       </div>
 
       {/* Mission & Vision Section */}
