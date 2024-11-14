@@ -27,7 +27,7 @@ function HeroSection() {
             <PackageButton
             path="/packages"
               parentStyling="mt-2 md:mt-0 flex justify-center items-center duration-500"
-              buttonStyling="py-2 px-8 bg-black border-2 border-[#30B43C] text-[#30B43C] rounded-3xl capitalize lg:text-base hover:bg-[#30B43C] hover:text-white font-medium transition-all"
+              buttonStyling="bg-[#30B43C] text-[#FFFFFF] hover:bg-[#D4FF9E] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-white font-medium transition-all"
               children="choose your Package"
             />
             <div className="mb-8 xl:mb-0 ">
