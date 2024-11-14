@@ -1,24 +1,20 @@
 "use client";
-import React from "react";
-import { IoStar } from "react-icons/io5";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import Button from "../Button";
 import PackageButton from "../PackageButton/PackageButton";
 import { GiHealthPotion } from "react-icons/gi";
 import { GiWeightScale } from "react-icons/gi";
 import { MdEnergySavingsLeaf } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 
-
 function HowWecan() {
   return (
     <div className="flex flex-col justify-center items-center my-7 ">
-      <h1 className="h1 text-gradient my-8 text-center">
-        How We Can Help You
-      </h1>
+      <h1 className="h1 text-gradient my-8 text-center">How We Can Help You</h1>
       <VerticalTimeline lineColor="#D4FF9E" animate={true}>
         <VerticalTimelineElement
           visible={true}
@@ -42,6 +38,11 @@ function HowWecan() {
             immune system, reduced risk of chronic diseases, and better overall
             Health.
           </p>
+          <Button
+            path="/packages"
+            buttonStyling="w-fit mt-2  duration-300 bg-[#000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-white font-medium transition-all"
+            children="Start now"
+          />
         </VerticalTimelineElement>
         <VerticalTimelineElement
           visible={true}
@@ -66,6 +67,11 @@ function HowWecan() {
             can help you control your calorie intake and make healthier food
             choices.
           </p>
+          <Button
+            path="/packages"
+            buttonStyling="w-fit mt-2  duration-300 bg-[#000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-white font-medium transition-all"
+            children="Start now"
+          />
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
@@ -93,6 +99,11 @@ function HowWecan() {
             function. Eating nutritious foods may help you feel more focused,
             improve your memory, and even boost your mood.
           </p>
+          <Button
+            path="/packages"
+            buttonStyling="w-fit mt-2  duration-300 bg-[#000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-white font-medium transition-all"
+            children="Start now"
+          />
         </VerticalTimelineElement>
         <VerticalTimelineElement
           visible={true}
@@ -116,6 +127,11 @@ function HowWecan() {
             exactly what to eat and won't have to waste time wondering what to
             make for meals and snacks.
           </p>
+          <Button
+            path="/packages"
+            buttonStyling="w-fit mt-2  duration-300 bg-[#000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#000] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-white font-medium transition-all"
+            children="Start now"
+          />
         </VerticalTimelineElement>
       </VerticalTimeline>
       <div className=" w-full flex items-center justify-center ">
