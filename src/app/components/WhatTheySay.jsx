@@ -1,42 +1,54 @@
 "use client";
 import React from "react";
-import { IoStar } from "react-icons/io5";
+import feedback1 from "../../../public/feedback1.jpg";
+import feedback2 from "../../../public/feedback2.jpg";
+import feedback3 from "../../../public/feedback3.jpg";
+import feedback4 from "../../../public/feedback4.jpg";
+import Button from "../components/Button";
+
 const testimonials = [
   {
     name: "Sarah M.",
-    text: "Joining Kalos Fit has been a life-changing experience for me. The personalized nutrition plans and training programs have helped me lose 15 pounds and gain a ton of confidence. The coaches are incredibly supportive and always available for any questions. I highly recommend this service to anyone looking to make a positive change in their life.",
+    text: "As a busy professional, Kalos Fit provided me with a flexible, effective way to stay fit. The convenient, personalized plans fit perfectly into my schedule, and the results have been amazing.",
+    image: feedback1,
   },
   {
     name: "Maya L.",
-    text: "I've tried numerous fitness programs in the past, but none have been as effective as Kalos Fit. The combination of tailored workout plans and nutritional guidance has allowed me to build muscle and improve my overall health. The online platform is easy to use and the community is very motivating. Thank you for helping me reach my goals!",
+    text: "Kalos Fit's holistic approach has been transformative, helping me manage back pain with physiotherapy and adopt healthier eating habits.",
+    image: feedback2,
   },
   {
     name: "Emily R.",
-    text: "The holistic approach of Kalos fit is what sets it apart from others. It's not just about losing weight; it's about adopting a healthier lifestyle. The physiotherapy sessions have been particularly beneficial for my back pain, and the nutrition advice has completely changed the way I eat. I feel better than ever!",
+    text: "After trying many programs, Kalos Fit has been the most effective, with tailored workout and nutrition plans, an easy-to-use platform, and a motivating community.",
+    image: feedback3,
   },
   {
     name: "Sophia K.",
-    text: "As a busy professional, I needed a flexible and effective way to stay fit and healthy. Kalos Fit offers exactly that. The online training programs are convenient and the personalized plans fit perfectly into my hectic schedule. I've seen amazing results and can't thank the team enough for their dedication and expertise.",
+    text: "Kalos Fit has been life-changing, helping me lose weight and gain confidence with personalized plans and supportive coaches always available to help.",
+    image: feedback4,
   },
 ];
 
-function TestimonialCard({ name, text, thirdCardMargin }) {
+function TestimonialCard({ name, text, image, thirdCardMargin }) {
   return (
-    <div className="flex flex-col items-center justify-start max-w-[320px] h-full !bg-white/10 p-8 rounded-xl mix-blend-lighten pb-4 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.99] hover:!scale-105 transition-all duration-500">
-      <h3 className=" text-white h3 capitalize text-xl font-bold">
-        {name}
-      </h3>
-      <p className=" !text-white/50 text-sm leading-7 my-3 font-light ">
-        {text}
-      </p>
-      <div
-        className={`flex gap-[2px] justify-center items-center ${thirdCardMargin} `}
-      >
-        <IoStar className="text-yellow-300" />
-        <IoStar className="text-yellow-300" />
-        <IoStar className="text-yellow-300" />
-        <IoStar className="text-yellow-300" />
-        <IoStar className="text-yellow-300" />
+    <div className="flex flex-col items-center justify-between max-w-[320px] h-full !bg-white/10 p-8 rounded-xl mix-blend-lighten pb-4 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.99] hover:!scale-105 transition-all duration-500">
+      <div className="flex flex-col items-center">
+        <h3 className="text-white capitalize text-xl font-bold">{name}</h3>
+        <p className="!text-white/50 text-sm leading-7 my-3 font-light">
+          {text}
+        </p>
+      </div>
+      <div>
+      <img
+        src={image.src}
+        alt={name}
+        className="w-full h-auto mt-4 rounded-lg object-cover"
+      />
+                <Button
+            path="/packages"
+            buttonStyling="w-fit mt-4  duration-300 bg-[#30B43C] text-[#FFFFFF] hover:bg-[#D4FF9E] py-2 px-8   rounded-3xl capitalize lg:text-base  hover:text-black font-medium transition-all"
+            children="Get yours now"
+          />
       </div>
     </div>
   );
@@ -50,16 +62,15 @@ function WhatTheySay() {
           Read what They Say About Us
         </h2>
 
-          <div className="bg-black grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                {...testimonial}
-                thirdCardMargin={index === 2 ? "mt-7" : ""}
-              />
-            ))}
-          </div>
-      
+        <div className="bg-black grid max-w-max mx-auto gap-7 items-center justify-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 group">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              key={index}
+              {...testimonial}
+              thirdCardMargin={index === 2 ? "mt-7" : ""}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
