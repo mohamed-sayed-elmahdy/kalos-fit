@@ -1,8 +1,12 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { event } from '../../lib/gtag'; // Import the event function from gtag
+import { event } from '../../lib/gtag'; 
+import dynamic from "next/dynamic";
 
+const DailyTimer = dynamic(() => import("../../components/DailyTimer"), {
+  ssr: false, // Disable server-side rendering
+});
 const packages = [
   {
     name: "Your New Life Gate",
@@ -67,7 +71,7 @@ const packages = [
   },
 ];
 
-const PackageCard = ({ pkg }) => {
+const PackageCard = ({ pkg, index }) => {
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -103,7 +107,7 @@ const PackageCard = ({ pkg }) => {
         <div className="text-5xl my-5 font-semibold flex items-center justify-start flex-wrap">
           <span className="line-through text-gray-400 italic text-4xl mr-3">${pkg.oldPrice}</span>
           <span>${pkg.price}</span>
-          <span className="text-[13px] ml-2 text-gray-100 bg-red-500 py-[6px] px-3  rounded-xl"><span className="">{pkg.oldPrice - pkg.price}$ </span>Discont </span>
+         {index === 1 ? <DailyTimer /> : <span className="text-[13px] ml-2 text-gray-100 bg-red-500 py-[6px] px-3  rounded-xl"><span className="">{pkg.oldPrice - pkg.price}$ </span>Discont </span>} 
         </div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
@@ -144,7 +148,7 @@ const Packages = () => (
     <h1 className="textgreen text-center text-6xl font-bold">Our Packages</h1>
     <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-6 max-sm:space-y-4 max-sm:flex-col mt-14">
       {packages.map((pkg, index) => (
-        <PackageCard key={index} pkg={pkg} />
+        <PackageCard key={index} pkg={pkg} index={index}/>
       ))}
     </div>
   </div>
