@@ -42,7 +42,7 @@ export default function PayPalCheckout({ selectedPackage }) {
 
       setSuccess(true);
       router.push(`/thankYou`);
-      console.log("Payment successful!", details);
+    
     });
   };
 

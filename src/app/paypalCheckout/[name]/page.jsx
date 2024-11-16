@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const DailyTimer = dynamic(() => import("../../components/DailyTimer"), {
+  ssr: false, 
+});
 import { FaCheckCircle } from "react-icons/fa";
 import PayPalCheckout from "../../components/PayPalButton";
 import Image from "next/image";
@@ -127,6 +131,7 @@ const PackageCard = ({ pkg }) => {
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
+        <DailyTimer />
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
         <div

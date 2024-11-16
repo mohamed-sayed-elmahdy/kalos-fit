@@ -5,7 +5,7 @@ import { event } from '../../lib/gtag';
 import dynamic from "next/dynamic";
 
 const DailyTimer = dynamic(() => import("../../components/DailyTimer"), {
-  ssr: false, // Disable server-side rendering
+  ssr: false, 
 });
 const packages = [
   {
