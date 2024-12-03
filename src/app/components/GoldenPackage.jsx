@@ -1,13 +1,9 @@
 "use client";
 import React from "react";
 import CounterdownTimer from "./CountdownTimer";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function GoldenPackage() {
-  const router = useRouter();
-  const handleButtonClick = () => {
-    router.push(`/packages/${encodeURIComponent(pkg.name)}`);
-  };
 
   return (
     <div className="p-2 flex justify-center items-center">
@@ -61,12 +57,13 @@ function GoldenPackage() {
         </div>
 
         {/* الزر */}
+        <Link href={"/packages"} className="flex justify-center items-center">
         <button
           className="self-center w-60 text-black py-2 rounded-full text-xl transition-all mt-auto bg-[#eeba2b] hover:bg-[#ffd562]"
-          onClick={handleButtonClick}
         >
           Get It Now
         </button>
+        </Link>
       </div>
     </div>
   );
