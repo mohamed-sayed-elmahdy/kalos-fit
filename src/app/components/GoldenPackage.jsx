@@ -19,9 +19,9 @@ function GoldenPackage() {
         </div>
 
         {/* Timer and One-Day Offer */}
-        <div className="flex items-center justify-evenly mt-4 mb-4 text-gold text-sm">
+        <div className="flex items-center justify-evenly gap-2 mt-4 mb-4 text-gold text-sm flex-wrap">
           {/* النص */}
-          <span className="text-xl font-semibold">
+          <span className="text-base md:text-xl font-semibold">
             For Just <span className="text-[#eeba2b]">One Day</span>
           </span>
           {/* تايمر */}
@@ -32,7 +32,7 @@ function GoldenPackage() {
         </div>
 
         {/* ضمان الثلاثة أشهر */}
-        <div className="text-center my-2 font-semibold text-2xl">
+        <div className="text-center my-2 font-semibold text-lg md:text-2xl">
           <div className="text-white ">
             If you didn't get an incredible transformation in just 3 months
           </div>
@@ -42,7 +42,7 @@ function GoldenPackage() {
         </div>
 
         {/* الصور */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-4 mb-6 ">
           <img
             src="/feedback1.jpg"
             alt="Image 1"
@@ -51,7 +51,7 @@ function GoldenPackage() {
           <img
               src="/feedback2.jpg"
             alt="Image 2"
-            className="w-full rounded-lg h-[184.1px]"
+            className="w-full rounded-lg md:h-[184.1px]"
             
           />
         </div>

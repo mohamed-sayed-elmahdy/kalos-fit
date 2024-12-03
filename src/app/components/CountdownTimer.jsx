@@ -37,7 +37,7 @@ const CountdownTimer = ({ startDate, endDate }) => {
   }
 
   return (
-    <div className="flex items-center justify-center gap-0 border border-[#eeba2b] rounded-xl px-3">
+    <div className="flex items-center justify-center gap-0 border border-[#eeba2b] rounded-xl sm:px-3 px-2">
       <div className="text-gold text-lg font-semibold bg-black px-1 py-1 rounded-md">
         {String(timeLeft.hours).padStart(2, "0")} h{" "}
         <span className="text-[#eeba2b] font-extrabold text-lg">:</span>
