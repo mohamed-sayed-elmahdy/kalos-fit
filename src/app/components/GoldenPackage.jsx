@@ -18,7 +18,7 @@ function GoldenPackage() {
           The Golden Offer
         </div>
 
-        <div className="flex items-center justify-evenly gap-2 mt-4 mb-4 text-gold text-sm flex-wrap">
+        <div className="flex items-center justify-evenly gap-2 mt-4 mb-2 text-gold text-sm flex-wrap">
           <CounterdownTimer
           
             endDate="2024-12-06T00:00:00"
@@ -30,13 +30,13 @@ function GoldenPackage() {
           <div className="text-white ">
             If you didn't get an incredible transformation in just 3 months
           </div>
-          <div className="text-gold font-semibold mt-2 text-[#eeba2b] capitalize">
+          <div className="text-2xl font-semibold mt-2 text-[#eeba2b] capitalize">
             you will get your money back
           </div>
         </div>
 
         {/* الصور */}
-        <div className="grid grid-cols-2 gap-4 mb-6 ">
+        <div className="grid grid-cols-2 gap-4 mb-4">
           <img
             src="/feedback1.jpg"
             alt="Image 1"
