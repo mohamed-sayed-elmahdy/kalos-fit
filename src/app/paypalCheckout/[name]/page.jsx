@@ -7,7 +7,6 @@ const CountdownTimer = dynamic(() => import("../../components/CountdownTimer"), 
 });
 import { FaCheckCircle } from "react-icons/fa";
 import PayPalCheckout from "../../components/PayPalButton";
-import Image from "next/image";
 const packages = [
   {
     name: "Your New Life Gate",
