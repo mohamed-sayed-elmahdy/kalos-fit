@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      {/* <GoldenPackage/> */}
+      <GoldenPackage />
       <ProgramSection />
       <HowWecan />
       <WhatTheySay />

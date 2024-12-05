@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const DailyTimer = dynamic(() => import("../../components/DailyTimer"), {
+const CountdownTimer = dynamic(() => import("../../components/CountdownTimer"), {
   ssr: false, 
 });
 import { FaCheckCircle } from "react-icons/fa";
@@ -30,7 +30,7 @@ const packages = [
   {
     name: "Get Ready",
     period: "3 Months",
-    price: 399,
+    price: 499,
     summary:
       "Get ready for any important event in your life and shine with a beautiful, fit body",
     features: [
@@ -40,12 +40,12 @@ const packages = [
       "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
       "Medical consultation",
     ],
-    bgColor: "#c5ff7c30",
-    borderColor: "#D4FF9E",
-    buttonBgColor: "#30B43C",
-    buttonHoverColor: "#7CFF88",
-    textColor: "#30B43C",
-    isHighlighted: true, // Added flag for special styling
+    bgColor: "#000",
+    borderColor: "#eeba2b",
+    buttonBgColor: "#eeba2b",
+    buttonHoverColor: "#ffd75e",
+    textColor: "#eeba2b",
+    isHighlighted: true, 
   },
   {
     name: "Lifestyle",
@@ -97,19 +97,7 @@ export default function CheckoutPage({ params }) {
         <PackageCard pkg={selectedPackage} />
       </div>
 
-      <div className="flex items-center justify-center bg-black max-sm:w-full max-w-96 max-md:my-7 flex-col">
-        <div className="bg-[#112308] border-[#30B43C] border text-xl rounded-3xl mb-2 w-full flex items-center justify-center p-2 md:p-3 gap-3">
-          <Image
-            src="/greenLogoedited.png"
-            alt="Logo"
-            width={120}
-            height={16}
-         
-          />
-          <h4 className="text-base mt-2 font-extrabold">
-            Start your journey to become the best version of you
-          </h4>
-        </div>
+      <div className="flex items-center justify-center bg-black max-sm:w-full min-w-90 max-w-96 max-md:my-7 flex-col">
         <PayPalCheckout selectedPackage={selectedPackage}  />
       </div>
     </div>
@@ -125,13 +113,13 @@ const PackageCard = ({ pkg }) => {
 
   return (
     <div
-      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between transition-all duration-500"
+      className="text-xl rounded-3xl border p-5 max-w-[390px] flex flex-col justify-between transition-all duration-500 "
       style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold">${pkg.price}</div>
-        <DailyTimer />
+         {pkg.name === "Get Ready" ? <CountdownTimer endDate="2024-12-06T00:00:00"/> : ""}
         <div className="text-xl font-extrabold">{pkg.period}</div>
         <div className="text-base">{pkg.summary}</div>
         <div
@@ -157,8 +145,12 @@ const PackageCard = ({ pkg }) => {
           </ul>
         </div>
         <button
-          className="self-center w-60 text-white hover:text-black font-bold py-2 rounded-full text-xl transition-all duration-500 hover:bg-[#D4FF9E] bg-[#30B43C] mt-3"
+          className={`self-center w-60 text-[#000]  font-bold py-2 rounded-full text-xl transition-all duration-500  hover:bg-${pkg.buttonHoverColor} bg-[${pkg.buttonBgColor}] mt-3`}
           onClick={handleToggle}
+          onMouseOver={(e) =>
+            (e.target.style.backgroundColor = pkg.buttonHoverColor)
+          }
+          onMouseOut={(e) => (e.target.style.backgroundColor = pkg.buttonBgColor)}
         >
           {showFeatures ? "See Less" : "See More"}
         </button>

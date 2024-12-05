@@ -1,17 +1,14 @@
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { League_Spartan, Playfair_Display } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import NavBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { GA_TRACKING_ID } from "./lib/gtag"; // Import GA_TRACKING_ID
 const leagueSpartan = League_Spartan({ subsets: ["latin"], display: "swap" });
- const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-});
+
 
 export const metadata = {
   title: "Kalos Fit",
@@ -23,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${leagueSpartan.className} ${playfairDisplay.className}`}
+        className={`${leagueSpartan.className}`}
       >
         {/* Google Analytics Scripts */}
         <Script
