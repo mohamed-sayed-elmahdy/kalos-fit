@@ -4,7 +4,6 @@ import CounterdownTimer from "./CountdownTimer";
 import Link from "next/link";
 
 function GoldenPackage() {
-
   return (
     <div className="p-2 flex justify-center items-center">
       <div
@@ -19,10 +18,7 @@ function GoldenPackage() {
         </div>
 
         <div className="flex items-center justify-evenly gap-2 mt-4 mb-2 text-gold text-sm flex-wrap">
-          <CounterdownTimer
-          
-            endDate="2024-12-06T00:00:00"
-          />
+          <CounterdownTimer endDate="2024-12-26T00:00:00" />
         </div>
 
         {/* ضمان الثلاثة أشهر */}
@@ -43,20 +39,17 @@ function GoldenPackage() {
             className="w-full rounded-lg"
           />
           <img
-              src="/feedback2.jpg"
+            src="/feedback2.jpg"
             alt="Image 2"
             className="w-full rounded-lg md:h-[184.1px]"
-            
           />
         </div>
 
         {/* الزر */}
         <Link href={"/packages"} className="flex justify-center items-center">
-        <button
-          className="self-center w-60 text-black py-2 rounded-full text-xl transition-all mt-auto bg-[#eeba2b] hover:bg-[#ffd562]"
-        >
-          Get It Now
-        </button>
+          <button className="self-center w-60 text-black py-2 rounded-full text-xl transition-all mt-auto bg-[#eeba2b] hover:bg-[#ffd562]">
+            Get It Now
+          </button>
         </Link>
       </div>
     </div>
