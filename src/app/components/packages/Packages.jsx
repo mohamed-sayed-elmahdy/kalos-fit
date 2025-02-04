@@ -30,7 +30,7 @@ const packages = [
   },
   {
     name: "Get Ready", 
-    period: "1 Year", 
+    period: "3 Months", 
     price: 599,
     summary:
       "We offer this just once a year—\n" +
@@ -117,7 +117,7 @@ const PackageCard = ({ pkg, index }) => {
           <span>${pkg.price}</span>
           {index === 1 && (
             <CounterdownTimer
-              startDate={new Date().toISOString()}
+              startDate={new Date().toISOString() } 
               endDate={new Date(new Date().setDate(new Date().getDate() + 1)).toISOString()}
             />
           )}
