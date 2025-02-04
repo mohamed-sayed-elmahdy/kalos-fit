@@ -13,8 +13,7 @@ const packages = [
   {
     name: "Your New Life Gate",
     period: "1 Month",
-    price: 150,
-    oldPrice: 250,
+    price: 299,
     summary: "Your Gate for Your Confident, Healthy, Successful Life",
     features: [
       "A nutrition plan tailored to your needs and desires",
@@ -30,31 +29,40 @@ const packages = [
     textColor: "#30B43C",
   },
   {
-    name: "Get Ready",
-    period: "3 Months",
-    price: 499,
-    oldPrice: 750,
+    name: "Get Ready", 
+    period: "1 Year", 
+    price: 599,
     summary:
-      "Get ready for any important event in your life and shine with a beautiful, fit body",
+      "We offer this just once a year—\n" +
+      "a $3,599 program for only $599!\n" +
+      "It's available for 24 hours only,\n" + 
+      "with just 30 spots up for grabs.\n" +
+      "Once they're gone, they're gone for the entire year.\n" +
+      "Don't wait—secure your spot NOW before it's too late!",
     features: [
-      "A nutrition plan tailored to your needs and desires",
-      "A Workout plan from home or at home tailored to your level",
-      "A suggested system for supplements if you want to use them",
-      "Respond To WhatsApp messages Within 12 - 24 Hours From your nutrition & training Coach",
-      "Medical consultation",
+      "Personal Coaching ( Worth : $1500 )",
+      "Personalized Nutrition Plan ( Worth : $400 )",
+      "Customized Workout Plan home or gym ( Worth : $350 )",
+      "Supplement Guidance system ( Worth : $200 )",
+      "24/7 WhatsApp Support ( Worth : $600 )",
+      "Healthy Cooking Guide ( Worth : $150 )",
+      "Quick Meal Prep Guide ( Worth : $150 )",
+      "Snacks Guide ( Worth : $100 )",
+      "Eating Out Guide( Worth : $100 )",
+      "Fast Recovery guide( Worth : $100 )",
+      "Medical Consultation ( Worth : $449 )"
     ],
     bgColor: "#000",
     borderColor: "#eeba2b",
     buttonBgColor: "#eeba2b",
     buttonHoverColor: "#ffd75e",
     textColor: "#eeba2b",
-    isHighlighted: true, 
+    isHighlighted: true,
   },
   {
     name: "Lifestyle",
     period: "6 Months",
-    price: 850,
-    oldPrice: 1500,
+    price: 1999,
     summary:
       "This package is designed to transform your life over six months. Embark on a comprehensive journey towards self-improvement with personalized training programs and balanced nutrition, supported by guidance sessions and ongoing support.",
     features: [
@@ -91,9 +99,8 @@ const PackageCard = ({ pkg, index }) => {
 
   return (
     <div
-      className={`relative text-xl rounded-3xl border p-5 max-w-[400px] flex flex-col justify-between overflow-hidden ${
-        pkg.isHighlighted ? "lg:transform xl:scale-110 z-10" : ""
-      }`}
+      className={`relative text-xl rounded-3xl border p-3 sm:p-5 max-w-[400px] flex flex-col justify-between overflow-hidden ${pkg.isHighlighted ? "lg:transform xl:scale-110 z-10" : ""
+        }`}
       style={{ borderColor: pkg.borderColor, backgroundColor: pkg.bgColor }}
     >
       {pkg.isHighlighted && (
@@ -107,23 +114,12 @@ const PackageCard = ({ pkg, index }) => {
       <div>
         <div style={{ color: pkg.textColor }}>{pkg.name}</div>
         <div className="text-5xl my-5 font-semibold flex items-center justify-start flex-wrap">
-          {index === 1 ? (
-            ""
-          ) : (
-            <span className="line-through text-gray-400 italic text-4xl mr-3">
-              ${pkg.oldPrice}
-            </span>
-          )}
           <span>${pkg.price}</span>
-          {index === 1 ? (
+          {index === 1 && (
             <CounterdownTimer
-              startDate="2024-12-25T00:00:00"
-              endDate="2024-12-26T00:00:00"
+              startDate="2025-02-03T00:00:00"
+              endDate="2025-02-04T00:00:00"
             />
-          ) : (
-            <span className="text-[13px] ml-2 text-gray-100 bg-red-500 py-[6px] px-3  rounded-xl">
-              <span className="">${pkg.oldPrice - pkg.price} </span>Discont{" "}
-            </span>
           )}
         </div>
         <div className="text-xl font-extrabold">{pkg.period}</div>
@@ -154,16 +150,16 @@ const PackageCard = ({ pkg, index }) => {
         onMouseOut={(e) => (e.target.style.backgroundColor = pkg.buttonBgColor)}
         onClick={handleButtonClick}
       >
-       {index === 1 ? "Get It Now" : " Start Your Journey"}
+        {index === 1 ? "Get It Now" : " Start Your Journey"}
       </button>
     </div>
   );
 };
 
 const Packages = () => (
-  <div className="mt-48 mb-28">
-    <h1 className="textgreen text-center text-6xl font-bold">Our Packages</h1>
-    <div className="max-sm:px-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-6 max-sm:space-y-4 max-sm:flex-col mt-14">
+  <div className="mt-28 md:mt-40 mb-28">
+    <h1 className="textgreen text-center text-4xl sm:text-5xl md:text-6xl font-bold">Our Packages</h1>
+    <div className="px-2 sm:px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 xl:gap-8 mt-8 sm:mt-10 md:mt-14">
       {packages.map((pkg, index) => (
         <PackageCard key={index} pkg={pkg} index={index} />
       ))}
