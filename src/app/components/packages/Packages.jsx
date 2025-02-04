@@ -117,8 +117,8 @@ const PackageCard = ({ pkg, index }) => {
           <span>${pkg.price}</span>
           {index === 1 && (
             <CounterdownTimer
-              startDate={new Date().toISOString() } 
-              endDate={new Date(new Date().setDate(new Date().getDate() + 1)).toISOString()}
+              startDate="2025-02-04T00:00:00"
+              endDate="2025-02-05T00:00:00"
             />
           )}
         </div>
