@@ -117,8 +117,8 @@ const PackageCard = ({ pkg, index }) => {
           <span>${pkg.price}</span>
           {index === 1 && (
             <CounterdownTimer
-              startDate="2025-02-06T00:00:00"
-              endDate="2025-02-07T00:00:00"
+              startDate="2025-02-09T00:00:00"
+              endDate="2025-02-10T00:00:00"
             />
           )}
         </div>

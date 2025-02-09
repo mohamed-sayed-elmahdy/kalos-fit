@@ -18,7 +18,7 @@ function GoldenPackage() {
         </div>
 
         <div className="flex items-center justify-evenly gap-2 mt-4 mb-2 text-gold text-sm flex-wrap">
-          <CounterdownTimer endDate="2025-02-07T00:00:00" />
+          <CounterdownTimer endDate="2025-02-010T00:00:00" />
         </div>
 
         {/* ضمان الثلاثة أشهر */}
